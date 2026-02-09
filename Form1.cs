@@ -17,11 +17,16 @@ namespace sellular_shop
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
-            button1.Visible = false;
-            //emailLabel.Visible = true;
-            emailTextBox.Visible = true;
+            
+            loginLabel.Visible = true;
+            LoginTextBox.Visible = true;
+            PassLabel.Visible = true;
+            PassTextBox.Visible = true;
+            LoginButton.Size = new System.Drawing.Size(160,30);
+            LoginButton.Location = new System.Drawing.Point(60,160);
+            
         }
 
         private void employeesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
