@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +15,28 @@ namespace sellular_shop
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Visible = false;
+            //emailLabel.Visible = true;
+            emailTextBox.Visible = true;
+        }
+
+        private void employeesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.employeesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.shopDataSet);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.employees". При необходимости она может быть перемещена или удалена.
+            this.employeesTableAdapter.Fill(this.shopDataSet.employees);
+
         }
     }
 }
