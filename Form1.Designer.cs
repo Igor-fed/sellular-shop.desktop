@@ -1,4 +1,4 @@
-namespace sellular_shop
+﻿namespace sellular_shop
 {
     partial class Form1
     {
