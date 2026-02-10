@@ -22,16 +22,31 @@ namespace sellular_shop
 
         private void OpenForm<T>() where T : Form, new()
         {
- 
+            SetNavigationControlsVisible(false);
+
+            foreach (Form child in this.MdiChildren)
+            {
+                child.Close();
+            }
 
             // Создаем и показываем новую форму
             T formInstance = new T();
             formInstance.MdiParent = this;
             formInstance.FormBorderStyle = FormBorderStyle.None;
             formInstance.Dock = DockStyle.Fill;
+            formInstance.FormClosed += ChildFormClosed;
             formInstance.Show();
+        }
 
-            
+        private void ChildFormClosed(object sender, FormClosedEventArgs e)
+        {
+            SetNavigationControlsVisible(true);
+        }
+
+        private void SetNavigationControlsVisible(bool isVisible)
+        {
+            changePass.Visible = isVisible;
+            btnEmployees.Visible = isVisible;
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)

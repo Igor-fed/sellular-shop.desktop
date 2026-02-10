@@ -77,7 +77,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(512, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(512, 384);
             this.dataGridView1.TabIndex = 0;
             // 
             // employeeidDataGridViewTextBoxColumn
@@ -201,41 +201,46 @@
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(18, 328);
+            this.edit.Location = new System.Drawing.Point(12, 286);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(220, 50);
             this.edit.TabIndex = 14;
             this.edit.Text = "Изменить";
             this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
             // filter
             // 
-            this.filter.Location = new System.Drawing.Point(18, 268);
+            this.filter.Location = new System.Drawing.Point(12, 226);
             this.filter.Name = "filter";
             this.filter.Size = new System.Drawing.Size(220, 50);
             this.filter.TabIndex = 15;
             this.filter.Text = "Фильтр";
             this.filter.UseVisualStyleBackColor = true;
+            this.filter.Click += new System.EventHandler(this.filter_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(18, 388);
+            this.button1.Location = new System.Drawing.Point(12, 346);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(220, 50);
             this.button1.TabIndex = 16;
             this.button1.Text = "Показать все";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 408);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.filter);
             this.Controls.Add(this.edit);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "employees";
             this.Text = "Сотрудники";
             this.Load += new System.EventHandler(this.employees_Load);
