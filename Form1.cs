@@ -78,7 +78,7 @@ namespace sellular_shop
         {
             if (string.Equals(position, "Администратор", StringComparison.OrdinalIgnoreCase))
             {
-                var adminForm = new AdminForm();
+                var adminForm = new AdminPanel();
                 ShowChildForm(adminForm);
                 return;
             }
