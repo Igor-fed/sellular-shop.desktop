@@ -121,7 +121,8 @@ namespace sellular_shop
 
         private void edit_Click(object sender, EventArgs e)
         {
-
+            editEmployee edit = new editEmployee();
+            edit.ShowDialog();
         }
     }
 }
