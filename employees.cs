@@ -12,9 +12,13 @@ namespace sellular_shop
 {
     public partial class employees : Form
     {
+        private string _lastSortedColumnName;
+        private ListSortDirection _lastSortDirection = ListSortDirection.Ascending;
+
         public employees()
         {
             InitializeComponent();
+            dataGridView1.ColumnHeaderMouseClick += dataGridView1_ColumnHeaderMouseClick;
         }
 
         private void employees_Load(object sender, EventArgs e)
@@ -29,5 +33,45 @@ namespace sellular_shop
         {
             this.Close();
         }
+
+   
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewColumn clickedColumn = dataGridView1.Columns[e.ColumnIndex];
+            string dataPropertyName = clickedColumn.DataPropertyName;
+
+            if (string.IsNullOrWhiteSpace(dataPropertyName))
+            {
+                return;
+            }
+
+            ListSortDirection nextSortDirection = ListSortDirection.Ascending;
+
+            if (_lastSortedColumnName == dataPropertyName)
+            {
+                nextSortDirection = _lastSortDirection == ListSortDirection.Ascending
+                    ? ListSortDirection.Descending
+                    : ListSortDirection.Ascending;
+            }
+
+            string sortDirectionText = nextSortDirection == ListSortDirection.Ascending ? "ASC" : "DESC";
+            employeesBindingSource.Sort = $"{dataPropertyName} {sortDirectionText}";
+
+            clickedColumn.HeaderCell.SortGlyphDirection = nextSortDirection == ListSortDirection.Ascending
+                ? SortOrder.Ascending
+                : SortOrder.Descending;
+
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                if (column != clickedColumn)
+                {
+                    column.HeaderCell.SortGlyphDirection = SortOrder.None;
+                }
+            }
+
+            _lastSortedColumnName = dataPropertyName;
+            _lastSortDirection = nextSortDirection;
+        }
+
     }
 }
