@@ -58,6 +58,7 @@
     <Compile Include="ChangePass.Designer.cs">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\StoredProcedureExecutor.cs" />
     <Compile Include="editEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
