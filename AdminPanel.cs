@@ -47,6 +47,8 @@ namespace sellular_shop
         {
             changePass.Visible = isVisible;
             btnEmployees.Visible = isVisible;
+            btnClients.Visible = isVisible;
+            btnServices.Visible = isVisible;
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
@@ -57,6 +59,16 @@ namespace sellular_shop
         private void btnEmployees_Click(object sender, EventArgs e)
         {
             OpenForm<employees>();
+        }
+
+        private void btnClients_Click(object sender, EventArgs e)
+        {
+            OpenForm<clients>();
+        }
+
+        private void btnServices_Click(object sender, EventArgs e)
+        {
+            OpenForm<services>();
         }
     }
 

@@ -46,6 +46,7 @@ ORDER BY SPECIFIC_SCHEMA, SPECIFIC_NAME;", connection))
                         var procedureName = reader.GetString(1);
 
                         var shortName = procedureName;
+                        var schemaDotName = schema + "." + procedureName;
                         var fullName = string.Format("[{0}].[{1}]", schema, procedureName);
 
                         if (!procedures.ContainsKey(shortName))
@@ -53,6 +54,7 @@ ORDER BY SPECIFIC_SCHEMA, SPECIFIC_NAME;", connection))
                             procedures[shortName] = fullName;
                         }
 
+                        procedures[schemaDotName] = fullName;
                         procedures[fullName] = fullName;
                     }
                 }
@@ -69,16 +71,8 @@ ORDER BY SPECIFIC_SCHEMA, SPECIFIC_NAME;", connection))
                 throw new ArgumentNullException(nameof(call));
             }
 
-            if (_availableProcedures.Count == 0)
-            {
-                LoadAllProcedures();
-            }
-
-            if (!_availableProcedures.TryGetValue(call.ProcedureName, out var resolvedProcedureName))
-            {
-                throw new InvalidOperationException(
-                    $"Процедура '{call.ProcedureName}' не найдена. Сначала вызовите LoadAllProcedures и проверьте имя.");
-            }
+            var requestedName = NormalizeProcedureName(call.ProcedureName);
+            var resolvedProcedureName = ResolveProcedureName(requestedName);
 
             using (var connection = new SqlConnection(_connectionString))
             using (var command = new SqlCommand(resolvedProcedureName, connection))
@@ -94,6 +88,52 @@ ORDER BY SPECIFIC_SCHEMA, SPECIFIC_NAME;", connection))
                 connection.Open();
                 return command.ExecuteNonQuery();
             }
+        }
+
+        private string ResolveProcedureName(string requestedName)
+        {
+            if (_availableProcedures.Count > 0)
+            {
+                if (_availableProcedures.TryGetValue(requestedName, out var resolvedByCache))
+                {
+                    return resolvedByCache;
+                }
+            }
+
+            if (_availableProcedures.Count == 0)
+            {
+                try
+                {
+                    LoadAllProcedures();
+
+                    if (_availableProcedures.TryGetValue(requestedName, out var resolvedAfterLoad))
+                    {
+                        return resolvedAfterLoad;
+                    }
+                }
+                catch
+                {
+                    // Если нет прав на INFORMATION_SCHEMA.ROUTINES или каталог недоступен,
+                    // пробуем выполнить процедуру напрямую по имени.
+                }
+            }
+
+            if (requestedName.IndexOf('.') >= 0)
+            {
+                return requestedName;
+            }
+
+            return "dbo." + requestedName;
+        }
+
+        private static string NormalizeProcedureName(string procedureName)
+        {
+            if (string.IsNullOrWhiteSpace(procedureName))
+            {
+                throw new ArgumentException("Procedure name is required.", nameof(procedureName));
+            }
+
+            return procedureName.Trim().Trim('{', '}');
         }
     }
 

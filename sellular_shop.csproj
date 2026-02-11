@@ -58,12 +58,36 @@
     <Compile Include="ChangePass.Designer.cs">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
+    <Compile Include="services.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="services.Designer.cs">
+      <DependentUpon>services.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\StoredProcedureExecutor.cs" />
+    <Compile Include="editServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editServices.Designer.cs">
+      <DependentUpon>editServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editClients.Designer.cs">
+      <DependentUpon>editClients.cs</DependentUpon>
+    </Compile>
     <Compile Include="editEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="editEmployee.Designer.cs">
       <DependentUpon>editEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clients.Designer.cs">
+      <DependentUpon>clients.cs</DependentUpon>
     </Compile>
     <Compile Include="employees.cs">
       <SubType>Form</SubType>
@@ -102,8 +126,20 @@
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="services.resx">
+      <DependentUpon>services.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editServices.resx">
+      <DependentUpon>editServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editClients.resx">
+      <DependentUpon>editClients.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="editEmployee.resx">
       <DependentUpon>editEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clients.resx">
+      <DependentUpon>clients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="employees.resx">
       <DependentUpon>employees.cs</DependentUpon>
@@ -124,8 +160,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include=".editorconfig" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

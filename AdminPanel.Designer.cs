@@ -30,6 +30,8 @@
         {
             this.changePass = new System.Windows.Forms.Button();
             this.btnEmployees = new System.Windows.Forms.Button();
+            this.btnClients = new System.Windows.Forms.Button();
+            this.btnServices = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // changePass
@@ -52,12 +54,34 @@
             this.btnEmployees.UseVisualStyleBackColor = true;
             this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
+            // btnClients
+            // 
+            this.btnClients.Location = new System.Drawing.Point(31, 141);
+            this.btnClients.Name = "btnClients";
+            this.btnClients.Size = new System.Drawing.Size(186, 60);
+            this.btnClients.TabIndex = 2;
+            this.btnClients.Text = "Клиенты";
+            this.btnClients.UseVisualStyleBackColor = true;
+            this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
+            // 
+            // btnServices
+            // 
+            this.btnServices.Location = new System.Drawing.Point(31, 219);
+            this.btnServices.Name = "btnServices";
+            this.btnServices.Size = new System.Drawing.Size(186, 60);
+            this.btnServices.TabIndex = 3;
+            this.btnServices.Text = "Услуги";
+            this.btnServices.UseVisualStyleBackColor = true;
+            this.btnServices.Click += new System.EventHandler(this.btnServices_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnServices);
+            this.Controls.Add(this.btnClients);
             this.Controls.Add(this.btnEmployees);
             this.Controls.Add(this.changePass);
             this.Name = "AdminPanel";
@@ -70,5 +94,7 @@
 
         private System.Windows.Forms.Button changePass;
         private System.Windows.Forms.Button btnEmployees;
+        private System.Windows.Forms.Button btnClients;
+        private System.Windows.Forms.Button btnServices;
     }
 }
