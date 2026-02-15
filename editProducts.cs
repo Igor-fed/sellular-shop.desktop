@@ -52,11 +52,11 @@ namespace sellular_shop
                     parameters: new[]
                     {
                         new StoredProcedureParameterMap("@наименование_товара", () => nameTextBox.Text),
-                        new StoredProcedureParameterMap("@id_категории", () => id_categoryListBox.SelectedItem),
+                        new StoredProcedureParameterMap("@id_категории", () => GetSelectedCategoryId()),
                         new StoredProcedureParameterMap("бренд", () => (brandTextBox.Text)),  
                         new StoredProcedureParameterMap("@цена", () => Convert.ToDecimal(priceTextBox.Text)),
                         new StoredProcedureParameterMap("@количество", () => quantityNumericUpDown.Value),
-                        new StoredProcedureParameterMap("@imei", () => Convert.ToInt32(imeiTextBox.Text))
+                        new StoredProcedureParameterMap("@imei", () => Convert.ToInt64(imeiTextBox.Text))
 
                
                     });
@@ -70,6 +70,22 @@ namespace sellular_shop
             {
                 MessageBox.Show($"Ошибка выполнения процедуры: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private int GetSelectedCategoryId()
+        {
+            if (id_categoryListBox.SelectedValue != null && int.TryParse(id_categoryListBox.SelectedValue.ToString(), out var categoryId))
+            {
+                return categoryId;
+            }
+
+            if (id_categoryListBox.SelectedItem is DataRowView selectedRow &&
+                int.TryParse(selectedRow["id"]?.ToString(), out categoryId))
+            {
+                return categoryId;
+            }
+
+            throw new InvalidOperationException("Не удалось определить выбранную категорию.");
         }
 
         private void btnNext_Click(object sender, EventArgs e)

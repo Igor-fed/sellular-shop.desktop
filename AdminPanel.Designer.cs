@@ -44,7 +44,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.products = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.contracts = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // changePass
@@ -208,15 +208,15 @@
             this.products.UseVisualStyleBackColor = true;
             this.products.Click += new System.EventHandler(this.products_Click);
             // 
-            // button12
+            // contracts
             // 
-            this.button12.Location = new System.Drawing.Point(300, 61);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(186, 60);
-            this.button12.TabIndex = 16;
-            this.button12.Text = "Договора";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Visible = false;
+            this.contracts.Location = new System.Drawing.Point(300, 61);
+            this.contracts.Name = "contracts";
+            this.contracts.Size = new System.Drawing.Size(186, 60);
+            this.contracts.TabIndex = 16;
+            this.contracts.Text = "Договора";
+            this.contracts.UseVisualStyleBackColor = true;
+            this.contracts.Click += new System.EventHandler(this.contracts_Click);
             // 
             // AdminPanel
             // 
@@ -224,7 +224,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 503);
-            this.Controls.Add(this.button12);
+            this.Controls.Add(this.contracts);
             this.Controls.Add(this.products);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -267,6 +267,6 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button products;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button contracts;
     }
 }

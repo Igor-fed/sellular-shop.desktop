@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace sellular_shop
 {
-    public partial class editContracts  : Form
+    public partial class editSales  : Form
     {
         private readonly StoredProcedureExecutor _procedureExecutor;
-        public editContracts()
+        public editSales()
         {
             InitializeComponent();
             _procedureExecutor = new StoredProcedureExecutor(Properties.Settings.Default.shopConnectionString);
@@ -24,13 +24,14 @@ namespace sellular_shop
 
 
 
-        private void editServices_Load(object sender, EventArgs e)
+        private void editSales_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.sales". При необходимости она может быть перемещена или удалена.
+            salesTableAdapter.Fill(shopDataSet.sales);
             clientsTableAdapter.Fill(shopDataSet.clients);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.employees". При необходимости она может быть перемещена или удалена.
             employeesTableAdapter.Fill(shopDataSet.employees);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.contracts". При необходимости она может быть перемещена или удалена.
-            contractsTableAdapter.Fill(shopDataSet.contracts);
+      
 
             ConfigurePersonDisplay(clientsBindingSource);
             ConfigurePersonDisplay(employeesBindingSource);
@@ -68,7 +69,7 @@ namespace sellular_shop
 
         private void btnPrevios_Click(object sender, EventArgs e)
         {
-            contractsBindingSource.MovePrevious();
+            salesBindingSource.MovePrevious();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -76,20 +77,20 @@ namespace sellular_shop
             try
             {
                 var call = new StoredProcedureCall(
-                    procedureName: "sp_create_contract",
+                    procedureName: "sp_create_sale",
                     parameters: new[]
                     {
-                        new StoredProcedureParameterMap("@id_клиента", () => client_idComboBox.SelectedItem),
-                        new StoredProcedureParameterMap("@id_услуги", () => service_idListBox.SelectedValue),
+             
                         new StoredProcedureParameterMap("@id_сотрудника", () => employee_idComboBox.SelectedValue),
-                        new StoredProcedureParameterMap("@телефон_клиента", () => phone_numberMaskedTextBox.Text)
+                        new StoredProcedureParameterMap("@id_клиента", () => client_idComboBox.SelectedItem),
+                        new StoredProcedureParameterMap("@тип_оплаты", () => payment_typeListBox.Text)
 
                     });
 
                 _procedureExecutor.Execute(call);
 
-                this.contractsTableAdapter.Fill(this.shopDataSet.contracts);
-                MessageBox.Show("Договор создан через хранимую процедуру.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.salesTableAdapter.Fill(this.shopDataSet.sales);
+                MessageBox.Show("Продажа начата через хранимую процедуру.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -99,28 +100,50 @@ namespace sellular_shop
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            contractsBindingSource.MoveNext();
+            salesBindingSource.MoveNext();
         }
 
         private void btnFirst_Click(object sender, EventArgs e)
         {
-            contractsBindingSource.MoveFirst();
+            salesBindingSource.MoveFirst();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnFinalize_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var call = new StoredProcedureCall(
+                    procedureName: "sp_finalize_sale",
+                    parameters: new[]
+                    {
+
+                        new StoredProcedureParameterMap("@id_продажи", () => Convert.ToInt32(sale_idLabel1.Text)),
+      
+
+                    });
+
+                _procedureExecutor.Execute(call);
+
+                this.salesTableAdapter.Fill(this.shopDataSet.sales);
+                MessageBox.Show("Продажа завершена через хранимую процедуру.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка выполнения процедуры: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             this.Validate();
-            this.contractsBindingSource.EndEdit();
+            this.salesBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.shopDataSet);
 
         }
 
         private void btnLast_Click(object sender, EventArgs e)
         {
-            contractsBindingSource.MoveLast();
+            salesBindingSource.MoveLast();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void addProd_Click(object sender, EventArgs e)
         {
             try
             {
@@ -129,13 +152,13 @@ namespace sellular_shop
                     parameters: new[]
                     {
                    
-                        new StoredProcedureParameterMap("@id_договора", () => Convert.ToInt32(contract_idLabel1.Text)),
+                        new StoredProcedureParameterMap("@id_договора", () => Convert.ToInt32(sale_idLabel1.Text)),
                         new StoredProcedureParameterMap("@Статус", () => "Закрыт")
                     });
 
                 _procedureExecutor.Execute(call);
 
-                this.contractsTableAdapter.Fill(this.shopDataSet.contracts);
+                this.salesTableAdapter.Fill(this.shopDataSet.sales);
                 MessageBox.Show($"Договор расторгнут с помощью хранимой процедуры.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -150,11 +173,16 @@ namespace sellular_shop
         }
 
 
-        private void contractsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void salesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.contractsBindingSource.EndEdit();
+            this.salesBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.shopDataSet);
+
+        }
+
+        private void addService_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -38,7 +38,6 @@
             System.Windows.Forms.Label imeiLabel;
             System.Windows.Forms.Label is_activeLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editProducts));
-            System.Windows.Forms.Label id_categoryLabel1;
             this.shopDataSet = new sellular_shop.shopDataSet();
             this.btnPrevios = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
@@ -70,13 +69,12 @@
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.imeiTextBox = new System.Windows.Forms.TextBox();
             this.is_activeCheckBox = new System.Windows.Forms.CheckBox();
-            this.id_categoryTextBox = new System.Windows.Forms.TextBox();
             this.quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.id_categoryComboBox = new System.Windows.Forms.ComboBox();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryTableAdapter = new sellular_shop.shopDataSetTableAdapters.categoryTableAdapter();
             this.id_categoryListBox = new System.Windows.Forms.ListBox();
             this.categoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.id_categoryLabel2 = new System.Windows.Forms.Label();
             product_idLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             id_categoryLabel = new System.Windows.Forms.Label();
@@ -85,7 +83,6 @@
             quantityLabel = new System.Windows.Forms.Label();
             imeiLabel = new System.Windows.Forms.Label();
             is_activeLabel = new System.Windows.Forms.Label();
-            id_categoryLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingNavigator)).BeginInit();
@@ -302,7 +299,7 @@
             this.productsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.productsBindingNavigator.Name = "productsBindingNavigator";
             this.productsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productsBindingNavigator.Size = new System.Drawing.Size(886, 27);
+            this.productsBindingNavigator.Size = new System.Drawing.Size(899, 27);
             this.productsBindingNavigator.TabIndex = 29;
             this.productsBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -450,14 +447,6 @@
             this.is_activeCheckBox.TabIndex = 37;
             this.is_activeCheckBox.UseVisualStyleBackColor = true;
             // 
-            // id_categoryTextBox
-            // 
-            this.id_categoryTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "id_category", true));
-            this.id_categoryTextBox.Location = new System.Drawing.Point(314, 102);
-            this.id_categoryTextBox.Name = "id_categoryTextBox";
-            this.id_categoryTextBox.Size = new System.Drawing.Size(100, 22);
-            this.id_categoryTextBox.TabIndex = 38;
-            // 
             // quantityNumericUpDown
             // 
             this.quantityNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.productsBindingSource, "quantity", true));
@@ -471,19 +460,6 @@
             this.quantityNumericUpDown.Size = new System.Drawing.Size(70, 22);
             this.quantityNumericUpDown.TabIndex = 39;
             // 
-            // id_categoryComboBox
-            // 
-            this.id_categoryComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "id_category", true));
-            this.id_categoryComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoryBindingSource, "id", true));
-            this.id_categoryComboBox.DataSource = this.categoryBindingSource;
-            this.id_categoryComboBox.DisplayMember = "name";
-            this.id_categoryComboBox.FormattingEnabled = true;
-            this.id_categoryComboBox.Location = new System.Drawing.Point(465, 100);
-            this.id_categoryComboBox.Name = "id_categoryComboBox";
-            this.id_categoryComboBox.Size = new System.Drawing.Size(121, 24);
-            this.id_categoryComboBox.TabIndex = 40;
-            this.id_categoryComboBox.ValueMember = "id";
-            // 
             // categoryBindingSource
             // 
             this.categoryBindingSource.DataMember = "category";
@@ -493,15 +469,6 @@
             // 
             this.categoryTableAdapter.ClearBeforeFill = true;
             // 
-            // id_categoryLabel1
-            // 
-            id_categoryLabel1.AutoSize = true;
-            id_categoryLabel1.Location = new System.Drawing.Point(663, 105);
-            id_categoryLabel1.Name = "id_categoryLabel1";
-            id_categoryLabel1.Size = new System.Drawing.Size(77, 16);
-            id_categoryLabel1.TabIndex = 40;
-            id_categoryLabel1.Text = "id category:";
-            // 
             // id_categoryListBox
             // 
             this.id_categoryListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoryBindingSource, "id", true));
@@ -509,7 +476,7 @@
             this.id_categoryListBox.DisplayMember = "name";
             this.id_categoryListBox.FormattingEnabled = true;
             this.id_categoryListBox.ItemHeight = 16;
-            this.id_categoryListBox.Location = new System.Drawing.Point(746, 105);
+            this.id_categoryListBox.Location = new System.Drawing.Point(420, 105);
             this.id_categoryListBox.Name = "id_categoryListBox";
             this.id_categoryListBox.Size = new System.Drawing.Size(120, 20);
             this.id_categoryListBox.TabIndex = 41;
@@ -520,16 +487,23 @@
             this.categoryBindingSource1.DataMember = "category";
             this.categoryBindingSource1.DataSource = this.shopDataSet;
             // 
+            // id_categoryLabel2
+            // 
+            this.id_categoryLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "id_category", true));
+            this.id_categoryLabel2.Location = new System.Drawing.Point(314, 105);
+            this.id_categoryLabel2.Name = "id_categoryLabel2";
+            this.id_categoryLabel2.Size = new System.Drawing.Size(100, 23);
+            this.id_categoryLabel2.TabIndex = 42;
+            this.id_categoryLabel2.Text = "label1";
+            // 
             // editProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 458);
-            this.Controls.Add(id_categoryLabel1);
+            this.ClientSize = new System.Drawing.Size(899, 458);
+            this.Controls.Add(this.id_categoryLabel2);
             this.Controls.Add(this.id_categoryListBox);
-            this.Controls.Add(this.id_categoryComboBox);
             this.Controls.Add(this.quantityNumericUpDown);
-            this.Controls.Add(this.id_categoryTextBox);
             this.Controls.Add(is_activeLabel);
             this.Controls.Add(this.is_activeCheckBox);
             this.Controls.Add(imeiLabel);
@@ -604,12 +578,11 @@
         private System.Windows.Forms.TextBox priceTextBox;
         private System.Windows.Forms.TextBox imeiTextBox;
         private System.Windows.Forms.CheckBox is_activeCheckBox;
-        private System.Windows.Forms.TextBox id_categoryTextBox;
         private System.Windows.Forms.NumericUpDown quantityNumericUpDown;
-        private System.Windows.Forms.ComboBox id_categoryComboBox;
         private System.Windows.Forms.BindingSource categoryBindingSource;
         private shopDataSetTableAdapters.categoryTableAdapter categoryTableAdapter;
         private System.Windows.Forms.ListBox id_categoryListBox;
         private System.Windows.Forms.BindingSource categoryBindingSource1;
+        private System.Windows.Forms.Label id_categoryLabel2;
     }
 }
