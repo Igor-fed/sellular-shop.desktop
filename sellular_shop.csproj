@@ -58,6 +58,36 @@
     <Compile Include="ChangePass.Designer.cs">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
+    <Compile Include="category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="category.Designer.cs">
+      <DependentUpon>category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editProducts.Designer.cs">
+      <DependentUpon>editProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editContracts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editContracts.Designer.cs">
+      <DependentUpon>editContracts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="products.Designer.cs">
+      <DependentUpon>products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="contracts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="contracts.Designer.cs">
+      <DependentUpon>contracts.cs</DependentUpon>
+    </Compile>
     <Compile Include="services.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +155,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="category.resx">
+      <DependentUpon>category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editProducts.resx">
+      <DependentUpon>editProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editContracts.resx">
+      <DependentUpon>editContracts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="products.resx">
+      <DependentUpon>products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="contracts.resx">
+      <DependentUpon>contracts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="services.resx">
       <DependentUpon>services.cs</DependentUpon>

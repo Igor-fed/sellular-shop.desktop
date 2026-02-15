@@ -69,6 +69,78 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // client_idLabel
+            // 
+            client_idLabel.AutoSize = true;
+            client_idLabel.Location = new System.Drawing.Point(154, 60);
+            client_idLabel.Name = "client_idLabel";
+            client_idLabel.Size = new System.Drawing.Size(79, 16);
+            client_idLabel.TabIndex = 28;
+            client_idLabel.Text = "id Клиента:";
+            // 
+            // last_nameLabel
+            // 
+            last_nameLabel.AutoSize = true;
+            last_nameLabel.Location = new System.Drawing.Point(156, 89);
+            last_nameLabel.Name = "last_nameLabel";
+            last_nameLabel.Size = new System.Drawing.Size(69, 16);
+            last_nameLabel.TabIndex = 29;
+            last_nameLabel.Text = "Фамилия:";
+            // 
+            // first_nameLabel
+            // 
+            first_nameLabel.AutoSize = true;
+            first_nameLabel.Location = new System.Drawing.Point(154, 117);
+            first_nameLabel.Name = "first_nameLabel";
+            first_nameLabel.Size = new System.Drawing.Size(36, 16);
+            first_nameLabel.TabIndex = 30;
+            first_nameLabel.Text = "Имя:";
+            // 
+            // patronymicLabel
+            // 
+            patronymicLabel.AutoSize = true;
+            patronymicLabel.Location = new System.Drawing.Point(156, 145);
+            patronymicLabel.Name = "patronymicLabel";
+            patronymicLabel.Size = new System.Drawing.Size(73, 16);
+            patronymicLabel.TabIndex = 31;
+            patronymicLabel.Text = "Отчество:";
+            // 
+            // birth_dateLabel
+            // 
+            birth_dateLabel.AutoSize = true;
+            birth_dateLabel.Location = new System.Drawing.Point(154, 175);
+            birth_dateLabel.Name = "birth_dateLabel";
+            birth_dateLabel.Size = new System.Drawing.Size(109, 16);
+            birth_dateLabel.TabIndex = 32;
+            birth_dateLabel.Text = "Дата рождения:";
+            // 
+            // phoneLabel
+            // 
+            phoneLabel.AutoSize = true;
+            phoneLabel.Location = new System.Drawing.Point(156, 201);
+            phoneLabel.Name = "phoneLabel";
+            phoneLabel.Size = new System.Drawing.Size(70, 16);
+            phoneLabel.TabIndex = 33;
+            phoneLabel.Text = "Телефон:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(156, 229);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(51, 16);
+            emailLabel.TabIndex = 34;
+            emailLabel.Text = "Почта:";
+            // 
+            // is_activeLabel
+            // 
+            is_activeLabel.AutoSize = true;
+            is_activeLabel.Location = new System.Drawing.Point(154, 256);
+            is_activeLabel.Name = "is_activeLabel";
+            is_activeLabel.Size = new System.Drawing.Size(107, 16);
+            is_activeLabel.TabIndex = 35;
+            is_activeLabel.Text = "Сотрудничаем:";
+            // 
             // shopDataSet
             // 
             this.shopDataSet.DataSetName = "shopDataSet";
@@ -163,15 +235,6 @@
             // 
             this.clientsTableAdapter.ClearBeforeFill = true;
             // 
-            // client_idLabel
-            // 
-            client_idLabel.AutoSize = true;
-            client_idLabel.Location = new System.Drawing.Point(154, 60);
-            client_idLabel.Name = "client_idLabel";
-            client_idLabel.Size = new System.Drawing.Size(79, 16);
-            client_idLabel.TabIndex = 28;
-            client_idLabel.Text = "id Клиента:";
-            // 
             // client_idLabel1
             // 
             this.client_idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientsBindingSource, "client_id", true));
@@ -181,15 +244,6 @@
             this.client_idLabel1.TabIndex = 29;
             this.client_idLabel1.Text = "label1";
             // 
-            // last_nameLabel
-            // 
-            last_nameLabel.AutoSize = true;
-            last_nameLabel.Location = new System.Drawing.Point(156, 89);
-            last_nameLabel.Name = "last_nameLabel";
-            last_nameLabel.Size = new System.Drawing.Size(69, 16);
-            last_nameLabel.TabIndex = 29;
-            last_nameLabel.Text = "Фамилия:";
-            // 
             // last_nameTextBox
             // 
             this.last_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientsBindingSource, "last_name", true));
@@ -197,15 +251,6 @@
             this.last_nameTextBox.Name = "last_nameTextBox";
             this.last_nameTextBox.Size = new System.Drawing.Size(143, 22);
             this.last_nameTextBox.TabIndex = 30;
-            // 
-            // first_nameLabel
-            // 
-            first_nameLabel.AutoSize = true;
-            first_nameLabel.Location = new System.Drawing.Point(154, 117);
-            first_nameLabel.Name = "first_nameLabel";
-            first_nameLabel.Size = new System.Drawing.Size(36, 16);
-            first_nameLabel.TabIndex = 30;
-            first_nameLabel.Text = "Имя:";
             // 
             // first_nameTextBox
             // 
@@ -215,15 +260,6 @@
             this.first_nameTextBox.Size = new System.Drawing.Size(143, 22);
             this.first_nameTextBox.TabIndex = 31;
             // 
-            // patronymicLabel
-            // 
-            patronymicLabel.AutoSize = true;
-            patronymicLabel.Location = new System.Drawing.Point(156, 145);
-            patronymicLabel.Name = "patronymicLabel";
-            patronymicLabel.Size = new System.Drawing.Size(73, 16);
-            patronymicLabel.TabIndex = 31;
-            patronymicLabel.Text = "Отчество:";
-            // 
             // patronymicTextBox
             // 
             this.patronymicTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientsBindingSource, "patronymic", true));
@@ -231,15 +267,6 @@
             this.patronymicTextBox.Name = "patronymicTextBox";
             this.patronymicTextBox.Size = new System.Drawing.Size(143, 22);
             this.patronymicTextBox.TabIndex = 32;
-            // 
-            // birth_dateLabel
-            // 
-            birth_dateLabel.AutoSize = true;
-            birth_dateLabel.Location = new System.Drawing.Point(154, 175);
-            birth_dateLabel.Name = "birth_dateLabel";
-            birth_dateLabel.Size = new System.Drawing.Size(109, 16);
-            birth_dateLabel.TabIndex = 32;
-            birth_dateLabel.Text = "Дата рождения:";
             // 
             // birth_dateDateTimePicker
             // 
@@ -249,15 +276,6 @@
             this.birth_dateDateTimePicker.Size = new System.Drawing.Size(143, 22);
             this.birth_dateDateTimePicker.TabIndex = 33;
             // 
-            // phoneLabel
-            // 
-            phoneLabel.AutoSize = true;
-            phoneLabel.Location = new System.Drawing.Point(156, 201);
-            phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new System.Drawing.Size(70, 16);
-            phoneLabel.TabIndex = 33;
-            phoneLabel.Text = "Телефон:";
-            // 
             // phoneTextBox
             // 
             this.phoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientsBindingSource, "phone", true));
@@ -266,15 +284,6 @@
             this.phoneTextBox.Size = new System.Drawing.Size(143, 22);
             this.phoneTextBox.TabIndex = 34;
             // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(156, 229);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(51, 16);
-            emailLabel.TabIndex = 34;
-            emailLabel.Text = "Почта:";
-            // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientsBindingSource, "email", true));
@@ -282,15 +291,6 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(146, 22);
             this.emailTextBox.TabIndex = 35;
-            // 
-            // is_activeLabel
-            // 
-            is_activeLabel.AutoSize = true;
-            is_activeLabel.Location = new System.Drawing.Point(154, 256);
-            is_activeLabel.Name = "is_activeLabel";
-            is_activeLabel.Size = new System.Drawing.Size(107, 16);
-            is_activeLabel.TabIndex = 35;
-            is_activeLabel.Text = "Сотрудничаем:";
             // 
             // is_activeCheckBox
             // 
@@ -343,6 +343,8 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevios);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "editClients";
             this.Text = "Редактирование данных";
             this.Load += new System.EventHandler(this.editEmployee_Load);

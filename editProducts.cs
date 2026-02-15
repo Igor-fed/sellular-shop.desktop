@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace sellular_shop
 {
-    public partial class editServices : Form
+    public partial class editProducts : Form
     {
         private readonly StoredProcedureExecutor _procedureExecutor;
-        public editServices()
+        public editProducts()
         {
             InitializeComponent();
             _procedureExecutor = new StoredProcedureExecutor(Properties.Settings.Default.shopConnectionString);
@@ -24,19 +24,23 @@ namespace sellular_shop
 
 
 
-        private void editServices_Load(object sender, EventArgs e)
+        private void editProducts_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.category". При необходимости она может быть перемещена или удалена.
+            this.categoryTableAdapter.Fill(this.shopDataSet.category);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.products". При необходимости она может быть перемещена или удалена.
+            this.productsTableAdapter.Fill(this.shopDataSet.products);
 
 
             // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.services". При необходимости она может быть перемещена или удалена.
-            servicesTableAdapter.Fill(shopDataSet.services);
+            productsTableAdapter.Fill(shopDataSet.products);
             _procedureExecutor.LoadAllProcedures();
 
         }
 
         private void btnPrevios_Click(object sender, EventArgs e)
         {
-            servicesBindingSource.MovePrevious();
+            productsBindingSource.MovePrevious();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -44,20 +48,23 @@ namespace sellular_shop
             try
             {
                 var call = new StoredProcedureCall(
-                    procedureName: "add_service", 
+                    procedureName: "add_product", 
                     parameters: new[]
                     {
-                        new StoredProcedureParameterMap("@Название_услуги", () => nameTextBox.Text),
-                        new StoredProcedureParameterMap("@описание", () => descriptionTextBox.Text),
-                        new StoredProcedureParameterMap("абонентская_плата", () => Convert.ToDecimal(monthly_feeTextBox.Text)),  
-                        new StoredProcedureParameterMap("@плата_за_подключение", () => Convert.ToDecimal(connection_feeTextBox.Text))
+                        new StoredProcedureParameterMap("@наименование_товара", () => nameTextBox.Text),
+                        new StoredProcedureParameterMap("@id_категории", () => id_categoryListBox.SelectedItem),
+                        new StoredProcedureParameterMap("бренд", () => (brandTextBox.Text)),  
+                        new StoredProcedureParameterMap("@цена", () => Convert.ToDecimal(priceTextBox.Text)),
+                        new StoredProcedureParameterMap("@количество", () => quantityNumericUpDown.Value),
+                        new StoredProcedureParameterMap("@imei", () => Convert.ToInt32(imeiTextBox.Text))
+
                
                     });
 
                 _procedureExecutor.Execute(call);
 
-                this.servicesTableAdapter.Fill(this.shopDataSet.services);
-                MessageBox.Show("Услуга добавлена через хранимую процедуру.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.productsTableAdapter.Fill(this.shopDataSet.products);
+                MessageBox.Show("Товар добавлен через хранимую процедуру.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -67,25 +74,25 @@ namespace sellular_shop
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            servicesBindingSource.MoveNext();
+            productsBindingSource.MoveNext();
         }
 
         private void btnFirst_Click(object sender, EventArgs e)
         {
-            servicesBindingSource.MoveFirst();
+            productsBindingSource.MoveFirst();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.servicesBindingSource.EndEdit();
+            this.productsBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.shopDataSet);
 
         }
 
         private void btnLast_Click(object sender, EventArgs e)
         {
-            servicesBindingSource.MoveLast();
+            productsBindingSource.MoveLast();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -93,17 +100,17 @@ namespace sellular_shop
             try
             {
                 var call = new StoredProcedureCall(
-                    procedureName: "deactivate_service",
+                    procedureName: "deactivate_product",
                     parameters: new[]
                     {
                    
-                        new StoredProcedureParameterMap("@id_услуги", () => Convert.ToInt32(service_idLabel1.Text))
+                        new StoredProcedureParameterMap("@id_продукта", () => Convert.ToInt32(product_idLabel1.Text))
                     });
 
                 _procedureExecutor.Execute(call);
 
-                this.servicesTableAdapter.Fill(this.shopDataSet.services);
-                MessageBox.Show($"Услуга перестала предоставляться с помощью хранимой процедуры.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.productsTableAdapter.Fill(this.shopDataSet.products);
+                MessageBox.Show($"Товар перестал предоставляться с помощью хранимой процедуры.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -116,12 +123,16 @@ namespace sellular_shop
             this.Close();
         }
 
-        private void servicesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+    
+
+        private void productsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.servicesBindingSource.EndEdit();
+            this.productsBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.shopDataSet);
 
         }
+
+
     }
 }

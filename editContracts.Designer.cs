@@ -1,6 +1,6 @@
 ﻿namespace sellular_shop
 {
-    partial class editServices
+    partial class editContracts
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label service_idLabel;
-            System.Windows.Forms.Label nameLabel;
-            System.Windows.Forms.Label descriptionLabel;
-            System.Windows.Forms.Label monthly_feeLabel;
-            System.Windows.Forms.Label is_activeLabel;
-            System.Windows.Forms.Label connection_feeLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editServices));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editContracts));
+            System.Windows.Forms.Label contract_idLabel;
+            System.Windows.Forms.Label client_idLabel;
             this.shopDataSet = new sellular_shop.shopDataSet();
             this.btnPrevios = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
@@ -46,92 +42,33 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.tableAdapterManager = new sellular_shop.shopDataSetTableAdapters.TableAdapterManager();
-            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.servicesTableAdapter = new sellular_shop.shopDataSetTableAdapters.servicesTableAdapter();
-            this.servicesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.contractsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contractsTableAdapter = new sellular_shop.shopDataSetTableAdapters.contractsTableAdapter();
+            this.contractsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.servicesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.service_idLabel1 = new System.Windows.Forms.Label();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.is_activeCheckBox = new System.Windows.Forms.CheckBox();
-            this.monthly_feeTextBox = new System.Windows.Forms.TextBox();
-            this.connection_feeTextBox = new System.Windows.Forms.TextBox();
-            service_idLabel = new System.Windows.Forms.Label();
-            nameLabel = new System.Windows.Forms.Label();
-            descriptionLabel = new System.Windows.Forms.Label();
-            monthly_feeLabel = new System.Windows.Forms.Label();
-            is_activeLabel = new System.Windows.Forms.Label();
-            connection_feeLabel = new System.Windows.Forms.Label();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.contractsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.contract_idLabel1 = new System.Windows.Forms.Label();
+            this.client_idComboBox = new System.Windows.Forms.ComboBox();
+            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientsTableAdapter = new sellular_shop.shopDataSetTableAdapters.clientsTableAdapter();
+            contract_idLabel = new System.Windows.Forms.Label();
+            client_idLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingNavigator)).BeginInit();
-            this.servicesBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsBindingNavigator)).BeginInit();
+            this.contractsBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // service_idLabel
-            // 
-            service_idLabel.AutoSize = true;
-            service_idLabel.Location = new System.Drawing.Point(246, 49);
-            service_idLabel.Name = "service_idLabel";
-            service_idLabel.Size = new System.Drawing.Size(69, 16);
-            service_idLabel.TabIndex = 29;
-            service_idLabel.Text = "id услуги:";
-            // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(246, 78);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(76, 16);
-            nameLabel.TabIndex = 30;
-            nameLabel.Text = "Название:";
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(246, 111);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(75, 16);
-            descriptionLabel.TabIndex = 31;
-            descriptionLabel.Text = "Описание:";
-            // 
-            // monthly_feeLabel
-            // 
-            monthly_feeLabel.AutoSize = true;
-            monthly_feeLabel.Location = new System.Drawing.Point(246, 147);
-            monthly_feeLabel.Name = "monthly_feeLabel";
-            monthly_feeLabel.Size = new System.Drawing.Size(92, 32);
-            monthly_feeLabel.TabIndex = 32;
-            monthly_feeLabel.Text = "Абонентская\r\nплата:";
-            // 
-            // is_activeLabel
-            // 
-            is_activeLabel.AutoSize = true;
-            is_activeLabel.Location = new System.Drawing.Point(246, 249);
-            is_activeLabel.Name = "is_activeLabel";
-            is_activeLabel.Size = new System.Drawing.Size(65, 16);
-            is_activeLabel.TabIndex = 34;
-            is_activeLabel.Text = "Активна:";
-            // 
-            // connection_feeLabel
-            // 
-            connection_feeLabel.AutoSize = true;
-            connection_feeLabel.Location = new System.Drawing.Point(246, 195);
-            connection_feeLabel.Name = "connection_feeLabel";
-            connection_feeLabel.Size = new System.Drawing.Size(105, 32);
-            connection_feeLabel.TabIndex = 35;
-            connection_feeLabel.Text = "Плата за \r\nприобретение:";
             // 
             // shopDataSet
             // 
@@ -232,23 +169,23 @@
             this.tableAdapterManager.servicesTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = sellular_shop.shopDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // servicesBindingSource
+            // contractsBindingSource
             // 
-            this.servicesBindingSource.DataMember = "services";
-            this.servicesBindingSource.DataSource = this.shopDataSet;
+            this.contractsBindingSource.DataMember = "contracts";
+            this.contractsBindingSource.DataSource = this.shopDataSet;
             // 
-            // servicesTableAdapter
+            // contractsTableAdapter
             // 
-            this.servicesTableAdapter.ClearBeforeFill = true;
+            this.contractsTableAdapter.ClearBeforeFill = true;
             // 
-            // servicesBindingNavigator
+            // contractsBindingNavigator
             // 
-            this.servicesBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.servicesBindingNavigator.BindingSource = this.servicesBindingSource;
-            this.servicesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.servicesBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.servicesBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.servicesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contractsBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.contractsBindingNavigator.BindingSource = this.contractsBindingSource;
+            this.contractsBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.contractsBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.contractsBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contractsBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -260,42 +197,17 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.servicesBindingNavigatorSaveItem});
-            this.servicesBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.servicesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.servicesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.servicesBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.servicesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.servicesBindingNavigator.Name = "servicesBindingNavigator";
-            this.servicesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.servicesBindingNavigator.Size = new System.Drawing.Size(717, 27);
-            this.servicesBindingNavigator.TabIndex = 29;
-            this.servicesBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 24);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            this.contractsBindingNavigatorSaveItem});
+            this.contractsBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.contractsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.contractsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.contractsBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.contractsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.contractsBindingNavigator.Name = "contractsBindingNavigator";
+            this.contractsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.contractsBindingNavigator.Size = new System.Drawing.Size(717, 27);
+            this.contractsBindingNavigator.TabIndex = 29;
+            this.contractsBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -303,7 +215,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 22);
             this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
             // 
             // bindingNavigatorMovePreviousItem
@@ -312,28 +224,34 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 20);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -355,86 +273,94 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
             // 
-            // servicesBindingNavigatorSaveItem
+            // bindingNavigatorAddNewItem
             // 
-            this.servicesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.servicesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("servicesBindingNavigatorSaveItem.Image")));
-            this.servicesBindingNavigatorSaveItem.Name = "servicesBindingNavigatorSaveItem";
-            this.servicesBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
-            this.servicesBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.servicesBindingNavigatorSaveItem.Click += new System.EventHandler(this.servicesBindingNavigatorSaveItem_Click);
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
             // 
-            // service_idLabel1
+            // bindingNavigatorDeleteItem
             // 
-            this.service_idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicesBindingSource, "service_id", true));
-            this.service_idLabel1.Location = new System.Drawing.Point(337, 49);
-            this.service_idLabel1.Name = "service_idLabel1";
-            this.service_idLabel1.Size = new System.Drawing.Size(100, 23);
-            this.service_idLabel1.TabIndex = 30;
-            this.service_idLabel1.Text = "label1";
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
-            // nameTextBox
+            // contractsBindingNavigatorSaveItem
             // 
-            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicesBindingSource, "name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(340, 75);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(165, 22);
-            this.nameTextBox.TabIndex = 31;
+            this.contractsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.contractsBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("contractsBindingNavigatorSaveItem.Image")));
+            this.contractsBindingNavigatorSaveItem.Name = "contractsBindingNavigatorSaveItem";
+            this.contractsBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.contractsBindingNavigatorSaveItem.Text = "Сохранить данные";
+            this.contractsBindingNavigatorSaveItem.Click += new System.EventHandler(this.contractsBindingNavigatorSaveItem_Click);
             // 
-            // descriptionTextBox
+            // contract_idLabel
             // 
-            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicesBindingSource, "description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(339, 108);
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(166, 22);
-            this.descriptionTextBox.TabIndex = 32;
+            contract_idLabel.AutoSize = true;
+            contract_idLabel.Location = new System.Drawing.Point(313, 31);
+            contract_idLabel.Name = "contract_idLabel";
+            contract_idLabel.Size = new System.Drawing.Size(71, 16);
+            contract_idLabel.TabIndex = 29;
+            contract_idLabel.Text = "contract id:";
             // 
-            // is_activeCheckBox
+            // contract_idLabel1
             // 
-            this.is_activeCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.servicesBindingSource, "is_active", true));
-            this.is_activeCheckBox.Location = new System.Drawing.Point(392, 246);
-            this.is_activeCheckBox.Name = "is_activeCheckBox";
-            this.is_activeCheckBox.Size = new System.Drawing.Size(22, 24);
-            this.is_activeCheckBox.TabIndex = 35;
-            this.is_activeCheckBox.UseVisualStyleBackColor = true;
+            this.contract_idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contractsBindingSource, "contract_id", true));
+            this.contract_idLabel1.Location = new System.Drawing.Point(390, 31);
+            this.contract_idLabel1.Name = "contract_idLabel1";
+            this.contract_idLabel1.Size = new System.Drawing.Size(100, 23);
+            this.contract_idLabel1.TabIndex = 30;
+            this.contract_idLabel1.Text = "label1";
             // 
-            // monthly_feeTextBox
+            // client_idLabel
             // 
-            this.monthly_feeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicesBindingSource, "monthly_fee", true));
-            this.monthly_feeTextBox.Location = new System.Drawing.Point(357, 157);
-            this.monthly_feeTextBox.Name = "monthly_feeTextBox";
-            this.monthly_feeTextBox.Size = new System.Drawing.Size(100, 22);
-            this.monthly_feeTextBox.TabIndex = 37;
+            client_idLabel.AutoSize = true;
+            client_idLabel.Location = new System.Drawing.Point(342, 86);
+            client_idLabel.Name = "client_idLabel";
+            client_idLabel.Size = new System.Drawing.Size(55, 16);
+            client_idLabel.TabIndex = 30;
+            client_idLabel.Text = "client id:";
             // 
-            // connection_feeTextBox
+            // client_idComboBox
             // 
-            this.connection_feeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicesBindingSource, "connection_fee", true));
-            this.connection_feeTextBox.Location = new System.Drawing.Point(357, 205);
-            this.connection_feeTextBox.Name = "connection_feeTextBox";
-            this.connection_feeTextBox.Size = new System.Drawing.Size(100, 22);
-            this.connection_feeTextBox.TabIndex = 38;
+            this.client_idComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contractsBindingSource, "client_id", true));
+            this.client_idComboBox.DataSource = this.clientsBindingSource;
+            this.client_idComboBox.DisplayMember = "last_name";
+            this.client_idComboBox.FormattingEnabled = true;
+            this.client_idComboBox.Location = new System.Drawing.Point(403, 83);
+            this.client_idComboBox.Name = "client_idComboBox";
+            this.client_idComboBox.Size = new System.Drawing.Size(121, 24);
+            this.client_idComboBox.TabIndex = 31;
+            this.client_idComboBox.ValueMember = "client_id";
             // 
-            // editServices
+            // clientsBindingSource
+            // 
+            this.clientsBindingSource.DataMember = "clients";
+            this.clientsBindingSource.DataSource = this.shopDataSet;
+            // 
+            // clientsTableAdapter
+            // 
+            this.clientsTableAdapter.ClearBeforeFill = true;
+            // 
+            // editContracts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 458);
-            this.Controls.Add(this.connection_feeTextBox);
-            this.Controls.Add(this.monthly_feeTextBox);
-            this.Controls.Add(connection_feeLabel);
-            this.Controls.Add(is_activeLabel);
-            this.Controls.Add(this.is_activeCheckBox);
-            this.Controls.Add(monthly_feeLabel);
-            this.Controls.Add(descriptionLabel);
-            this.Controls.Add(this.descriptionTextBox);
-            this.Controls.Add(nameLabel);
-            this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(service_idLabel);
-            this.Controls.Add(this.service_idLabel1);
-            this.Controls.Add(this.servicesBindingNavigator);
+            this.Controls.Add(client_idLabel);
+            this.Controls.Add(this.client_idComboBox);
+            this.Controls.Add(contract_idLabel);
+            this.Controls.Add(this.contract_idLabel1);
+            this.Controls.Add(this.contractsBindingNavigator);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnLast);
@@ -445,14 +371,15 @@
             this.Controls.Add(this.btnPrevios);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "editServices";
+            this.Name = "editContracts";
             this.Text = "Редактирование данных";
             this.Load += new System.EventHandler(this.editServices_Load);
             ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingNavigator)).EndInit();
-            this.servicesBindingNavigator.ResumeLayout(false);
-            this.servicesBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsBindingNavigator)).EndInit();
+            this.contractsBindingNavigator.ResumeLayout(false);
+            this.contractsBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,9 +397,9 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnBack;
         private shopDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingSource servicesBindingSource;
-        private shopDataSetTableAdapters.servicesTableAdapter servicesTableAdapter;
-        private System.Windows.Forms.BindingNavigator servicesBindingNavigator;
+        private System.Windows.Forms.BindingSource contractsBindingSource;
+        private shopDataSetTableAdapters.contractsTableAdapter contractsTableAdapter;
+        private System.Windows.Forms.BindingNavigator contractsBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -484,12 +411,10 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton servicesBindingNavigatorSaveItem;
-        private System.Windows.Forms.Label service_idLabel1;
-        private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.TextBox descriptionTextBox;
-        private System.Windows.Forms.CheckBox is_activeCheckBox;
-        private System.Windows.Forms.TextBox monthly_feeTextBox;
-        private System.Windows.Forms.TextBox connection_feeTextBox;
+        private System.Windows.Forms.ToolStripButton contractsBindingNavigatorSaveItem;
+        private System.Windows.Forms.Label contract_idLabel1;
+        private System.Windows.Forms.ComboBox client_idComboBox;
+        private System.Windows.Forms.BindingSource clientsBindingSource;
+        private shopDataSetTableAdapters.clientsTableAdapter clientsTableAdapter;
     }
 }

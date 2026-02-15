@@ -8,26 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sellular_shop.Filtering;
+using sellular_shop.shopDataSetTableAdapters;
 using sellular_shop.Sorting;
 using sellular_shop.UI;
 
 namespace sellular_shop
 {
-    public partial class clients : Form
+    public partial class contracts : Form
     {
         private readonly GridSortState _sortState = new GridSortState();
 
-        public clients()
+        public contracts()
         {
             InitializeComponent();
             dataGridView1.ColumnHeaderMouseClick += dataGridView1_ColumnHeaderMouseClick;
         }
 
-        private void clients_Load(object sender, EventArgs e)
+        private void contracts_Load(object sender, EventArgs e)
         {
-       
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.clients". При необходимости она может быть перемещена или удалена.
-            clientsTableAdapter.Fill(shopDataSet.clients);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.contracts". При необходимости она может быть перемещена или удалена.
+            contractsTableAdapter.Fill(shopDataSet.contracts);
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace sellular_shop
 
             ListSortDirection nextSortDirection = _sortState.GetNextDirection(dataPropertyName);
             string sortDirectionText = GridSortState.ToSortDirectionText(nextSortDirection);
-            clientsBindingSource.Sort = $"{dataPropertyName} {sortDirectionText}";
+            contractsBindingSource.Sort = $"{dataPropertyName} {sortDirectionText}";
 
             clickedColumn.HeaderCell.SortGlyphDirection = nextSortDirection == ListSortDirection.Ascending
                 ? SortOrder.Ascending
@@ -64,7 +65,7 @@ namespace sellular_shop
 
         private void filter_Click(object sender, EventArgs e)
         {
-            DataTable sourceTable = shopDataSet.clients;
+            DataTable sourceTable = shopDataSet.services;
             if (sourceTable == null)
             {
                 return;
@@ -92,7 +93,7 @@ namespace sellular_shop
                 try
                 {
                     DataTable filtered = TableFilterService.ApplyFilter(sourceTable, dialog.SelectedColumn, dialog.SearchValue, dialog.UseRegex);
-                    clientsBindingSource1.DataSource = filtered;
+                    contractsBindingSource.DataSource = filtered;
                 }
                 catch (ArgumentException ex)
                 {
@@ -108,9 +109,9 @@ namespace sellular_shop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            clientsBindingSource1.DataSource = shopDataSet.clients;
-            clientsBindingSource1.RemoveFilter();
-            clientsBindingSource1.Sort = string.Empty;
+            contractsBindingSource.DataSource = shopDataSet.services;
+            contractsBindingSource.RemoveFilter();
+            contractsBindingSource.Sort = string.Empty;
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
@@ -122,7 +123,7 @@ namespace sellular_shop
 
         private void edit_Click(object sender, EventArgs e)
         {
-            editClients edit = new editClients();
+            editContracts  edit = new editContracts();
             edit.ShowDialog();
         }
     }

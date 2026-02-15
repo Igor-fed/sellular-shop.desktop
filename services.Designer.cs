@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.serviceidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monthlyfeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.connectionfeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isactiveDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.shopDataSet = new sellular_shop.shopDataSet();
             this.btnBack = new System.Windows.Forms.Button();
@@ -37,12 +43,6 @@
             this.filter = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.servicesTableAdapter = new sellular_shop.shopDataSetTableAdapters.servicesTableAdapter();
-            this.serviceidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monthlyfeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.connectionfeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isactiveDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).BeginInit();
@@ -69,6 +69,60 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(512, 384);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // serviceidDataGridViewTextBoxColumn
+            // 
+            this.serviceidDataGridViewTextBoxColumn.DataPropertyName = "service_id";
+            this.serviceidDataGridViewTextBoxColumn.HeaderText = "id_Услуги";
+            this.serviceidDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.serviceidDataGridViewTextBoxColumn.Name = "serviceidDataGridViewTextBoxColumn";
+            this.serviceidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.serviceidDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // monthlyfeeDataGridViewTextBoxColumn
+            // 
+            this.monthlyfeeDataGridViewTextBoxColumn.DataPropertyName = "monthly_fee";
+            this.monthlyfeeDataGridViewTextBoxColumn.HeaderText = "Абонентская плата";
+            this.monthlyfeeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.monthlyfeeDataGridViewTextBoxColumn.Name = "monthlyfeeDataGridViewTextBoxColumn";
+            this.monthlyfeeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.monthlyfeeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // connectionfeeDataGridViewTextBoxColumn
+            // 
+            this.connectionfeeDataGridViewTextBoxColumn.DataPropertyName = "connection_fee";
+            this.connectionfeeDataGridViewTextBoxColumn.HeaderText = "Плата за приобретение";
+            this.connectionfeeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.connectionfeeDataGridViewTextBoxColumn.Name = "connectionfeeDataGridViewTextBoxColumn";
+            this.connectionfeeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.connectionfeeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // isactiveDataGridViewCheckBoxColumn
+            // 
+            this.isactiveDataGridViewCheckBoxColumn.DataPropertyName = "is_active";
+            this.isactiveDataGridViewCheckBoxColumn.HeaderText = "Активна";
+            this.isactiveDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.isactiveDataGridViewCheckBoxColumn.Name = "isactiveDataGridViewCheckBoxColumn";
+            this.isactiveDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.isactiveDataGridViewCheckBoxColumn.Width = 125;
             // 
             // servicesBindingSource
             // 
@@ -123,60 +177,6 @@
             // servicesTableAdapter
             // 
             this.servicesTableAdapter.ClearBeforeFill = true;
-            // 
-            // serviceidDataGridViewTextBoxColumn
-            // 
-            this.serviceidDataGridViewTextBoxColumn.DataPropertyName = "service_id";
-            this.serviceidDataGridViewTextBoxColumn.HeaderText = "id_Услуги";
-            this.serviceidDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.serviceidDataGridViewTextBoxColumn.Name = "serviceidDataGridViewTextBoxColumn";
-            this.serviceidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.serviceidDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descriptionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // monthlyfeeDataGridViewTextBoxColumn
-            // 
-            this.monthlyfeeDataGridViewTextBoxColumn.DataPropertyName = "monthly_fee";
-            this.monthlyfeeDataGridViewTextBoxColumn.HeaderText = "Абонентская плата";
-            this.monthlyfeeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.monthlyfeeDataGridViewTextBoxColumn.Name = "monthlyfeeDataGridViewTextBoxColumn";
-            this.monthlyfeeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.monthlyfeeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // connectionfeeDataGridViewTextBoxColumn
-            // 
-            this.connectionfeeDataGridViewTextBoxColumn.DataPropertyName = "connection_fee";
-            this.connectionfeeDataGridViewTextBoxColumn.HeaderText = "Плата за приобретение";
-            this.connectionfeeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.connectionfeeDataGridViewTextBoxColumn.Name = "connectionfeeDataGridViewTextBoxColumn";
-            this.connectionfeeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.connectionfeeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // isactiveDataGridViewCheckBoxColumn
-            // 
-            this.isactiveDataGridViewCheckBoxColumn.DataPropertyName = "is_active";
-            this.isactiveDataGridViewCheckBoxColumn.HeaderText = "Предоставляется";
-            this.isactiveDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.isactiveDataGridViewCheckBoxColumn.Name = "isactiveDataGridViewCheckBoxColumn";
-            this.isactiveDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.isactiveDataGridViewCheckBoxColumn.Width = 125;
             // 
             // services
             // 

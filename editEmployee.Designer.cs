@@ -486,6 +486,8 @@
             this.Controls.Add(employee_idLabel);
             this.Controls.Add(this.employee_idLabel1);
             this.Controls.Add(this.employeesBindingNavigator);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "editEmployee";
             this.Text = "Редактирование данных";
             this.Load += new System.EventHandler(this.editEmployee_Load);

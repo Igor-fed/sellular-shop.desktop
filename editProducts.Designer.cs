@@ -1,6 +1,6 @@
 ﻿namespace sellular_shop
 {
-    partial class editServices
+    partial class editProducts
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label service_idLabel;
+            System.Windows.Forms.Label product_idLabel;
             System.Windows.Forms.Label nameLabel;
-            System.Windows.Forms.Label descriptionLabel;
-            System.Windows.Forms.Label monthly_feeLabel;
+            System.Windows.Forms.Label id_categoryLabel;
+            System.Windows.Forms.Label brandLabel;
+            System.Windows.Forms.Label priceLabel;
+            System.Windows.Forms.Label quantityLabel;
+            System.Windows.Forms.Label imeiLabel;
             System.Windows.Forms.Label is_activeLabel;
-            System.Windows.Forms.Label connection_feeLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editServices));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editProducts));
+            System.Windows.Forms.Label id_categoryLabel1;
             this.shopDataSet = new sellular_shop.shopDataSet();
             this.btnPrevios = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
@@ -46,9 +49,9 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.tableAdapterManager = new sellular_shop.shopDataSetTableAdapters.TableAdapterManager();
-            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.servicesTableAdapter = new sellular_shop.shopDataSetTableAdapters.servicesTableAdapter();
-            this.servicesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsTableAdapter = new sellular_shop.shopDataSetTableAdapters.productsTableAdapter();
+            this.productsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
@@ -60,78 +63,109 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.servicesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.service_idLabel1 = new System.Windows.Forms.Label();
+            this.productsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.product_idLabel1 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.brandTextBox = new System.Windows.Forms.TextBox();
+            this.priceTextBox = new System.Windows.Forms.TextBox();
+            this.imeiTextBox = new System.Windows.Forms.TextBox();
             this.is_activeCheckBox = new System.Windows.Forms.CheckBox();
-            this.monthly_feeTextBox = new System.Windows.Forms.TextBox();
-            this.connection_feeTextBox = new System.Windows.Forms.TextBox();
-            service_idLabel = new System.Windows.Forms.Label();
+            this.id_categoryTextBox = new System.Windows.Forms.TextBox();
+            this.quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.id_categoryComboBox = new System.Windows.Forms.ComboBox();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoryTableAdapter = new sellular_shop.shopDataSetTableAdapters.categoryTableAdapter();
+            this.id_categoryListBox = new System.Windows.Forms.ListBox();
+            this.categoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            product_idLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
-            descriptionLabel = new System.Windows.Forms.Label();
-            monthly_feeLabel = new System.Windows.Forms.Label();
+            id_categoryLabel = new System.Windows.Forms.Label();
+            brandLabel = new System.Windows.Forms.Label();
+            priceLabel = new System.Windows.Forms.Label();
+            quantityLabel = new System.Windows.Forms.Label();
+            imeiLabel = new System.Windows.Forms.Label();
             is_activeLabel = new System.Windows.Forms.Label();
-            connection_feeLabel = new System.Windows.Forms.Label();
+            id_categoryLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingNavigator)).BeginInit();
-            this.servicesBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingNavigator)).BeginInit();
+            this.productsBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // service_idLabel
+            // product_idLabel
             // 
-            service_idLabel.AutoSize = true;
-            service_idLabel.Location = new System.Drawing.Point(246, 49);
-            service_idLabel.Name = "service_idLabel";
-            service_idLabel.Size = new System.Drawing.Size(69, 16);
-            service_idLabel.TabIndex = 29;
-            service_idLabel.Text = "id услуги:";
+            product_idLabel.AutoSize = true;
+            product_idLabel.Location = new System.Drawing.Point(210, 50);
+            product_idLabel.Name = "product_idLabel";
+            product_idLabel.Size = new System.Drawing.Size(73, 16);
+            product_idLabel.TabIndex = 29;
+            product_idLabel.Text = "id Товара:";
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(246, 78);
+            nameLabel.Location = new System.Drawing.Point(210, 79);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(76, 16);
             nameLabel.TabIndex = 30;
             nameLabel.Text = "Название:";
             // 
-            // descriptionLabel
+            // id_categoryLabel
             // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(246, 111);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(75, 16);
-            descriptionLabel.TabIndex = 31;
-            descriptionLabel.Text = "Описание:";
+            id_categoryLabel.AutoSize = true;
+            id_categoryLabel.Location = new System.Drawing.Point(210, 105);
+            id_categoryLabel.Name = "id_categoryLabel";
+            id_categoryLabel.Size = new System.Drawing.Size(93, 16);
+            id_categoryLabel.TabIndex = 31;
+            id_categoryLabel.Text = "id Категории:";
             // 
-            // monthly_feeLabel
+            // brandLabel
             // 
-            monthly_feeLabel.AutoSize = true;
-            monthly_feeLabel.Location = new System.Drawing.Point(246, 147);
-            monthly_feeLabel.Name = "monthly_feeLabel";
-            monthly_feeLabel.Size = new System.Drawing.Size(92, 32);
-            monthly_feeLabel.TabIndex = 32;
-            monthly_feeLabel.Text = "Абонентская\r\nплата:";
+            brandLabel.AutoSize = true;
+            brandLabel.Location = new System.Drawing.Point(210, 132);
+            brandLabel.Name = "brandLabel";
+            brandLabel.Size = new System.Drawing.Size(51, 16);
+            brandLabel.TabIndex = 32;
+            brandLabel.Text = "Бренд:";
+            // 
+            // priceLabel
+            // 
+            priceLabel.AutoSize = true;
+            priceLabel.Location = new System.Drawing.Point(210, 157);
+            priceLabel.Name = "priceLabel";
+            priceLabel.Size = new System.Drawing.Size(42, 16);
+            priceLabel.TabIndex = 33;
+            priceLabel.Text = "цена:";
+            // 
+            // quantityLabel
+            // 
+            quantityLabel.AutoSize = true;
+            quantityLabel.Location = new System.Drawing.Point(210, 184);
+            quantityLabel.Name = "quantityLabel";
+            quantityLabel.Size = new System.Drawing.Size(88, 16);
+            quantityLabel.TabIndex = 34;
+            quantityLabel.Text = "Количество:";
+            // 
+            // imeiLabel
+            // 
+            imeiLabel.AutoSize = true;
+            imeiLabel.Location = new System.Drawing.Point(210, 212);
+            imeiLabel.Name = "imeiLabel";
+            imeiLabel.Size = new System.Drawing.Size(35, 16);
+            imeiLabel.TabIndex = 35;
+            imeiLabel.Text = "imei:";
             // 
             // is_activeLabel
             // 
             is_activeLabel.AutoSize = true;
-            is_activeLabel.Location = new System.Drawing.Point(246, 249);
+            is_activeLabel.Location = new System.Drawing.Point(210, 241);
             is_activeLabel.Name = "is_activeLabel";
             is_activeLabel.Size = new System.Drawing.Size(65, 16);
-            is_activeLabel.TabIndex = 34;
+            is_activeLabel.TabIndex = 36;
             is_activeLabel.Text = "Активна:";
-            // 
-            // connection_feeLabel
-            // 
-            connection_feeLabel.AutoSize = true;
-            connection_feeLabel.Location = new System.Drawing.Point(246, 195);
-            connection_feeLabel.Name = "connection_feeLabel";
-            connection_feeLabel.Size = new System.Drawing.Size(105, 32);
-            connection_feeLabel.TabIndex = 35;
-            connection_feeLabel.Text = "Плата за \r\nприобретение:";
             // 
             // shopDataSet
             // 
@@ -232,23 +266,23 @@
             this.tableAdapterManager.servicesTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = sellular_shop.shopDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // servicesBindingSource
+            // productsBindingSource
             // 
-            this.servicesBindingSource.DataMember = "services";
-            this.servicesBindingSource.DataSource = this.shopDataSet;
+            this.productsBindingSource.DataMember = "products";
+            this.productsBindingSource.DataSource = this.shopDataSet;
             // 
-            // servicesTableAdapter
+            // productsTableAdapter
             // 
-            this.servicesTableAdapter.ClearBeforeFill = true;
+            this.productsTableAdapter.ClearBeforeFill = true;
             // 
-            // servicesBindingNavigator
+            // productsBindingNavigator
             // 
-            this.servicesBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.servicesBindingNavigator.BindingSource = this.servicesBindingSource;
-            this.servicesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.servicesBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.servicesBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.servicesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productsBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.productsBindingNavigator.BindingSource = this.productsBindingSource;
+            this.productsBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.productsBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.productsBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.productsBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -260,17 +294,17 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.servicesBindingNavigatorSaveItem});
-            this.servicesBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.servicesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.servicesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.servicesBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.servicesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.servicesBindingNavigator.Name = "servicesBindingNavigator";
-            this.servicesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.servicesBindingNavigator.Size = new System.Drawing.Size(717, 27);
-            this.servicesBindingNavigator.TabIndex = 29;
-            this.servicesBindingNavigator.Text = "bindingNavigator1";
+            this.productsBindingNavigatorSaveItem});
+            this.productsBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.productsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.productsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.productsBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.productsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.productsBindingNavigator.Name = "productsBindingNavigator";
+            this.productsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.productsBindingNavigator.Size = new System.Drawing.Size(886, 27);
+            this.productsBindingNavigator.TabIndex = 29;
+            this.productsBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -324,7 +358,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -358,83 +391,160 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // servicesBindingNavigatorSaveItem
+            // productsBindingNavigatorSaveItem
             // 
-            this.servicesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.servicesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("servicesBindingNavigatorSaveItem.Image")));
-            this.servicesBindingNavigatorSaveItem.Name = "servicesBindingNavigatorSaveItem";
-            this.servicesBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
-            this.servicesBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.servicesBindingNavigatorSaveItem.Click += new System.EventHandler(this.servicesBindingNavigatorSaveItem_Click);
+            this.productsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.productsBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("productsBindingNavigatorSaveItem.Image")));
+            this.productsBindingNavigatorSaveItem.Name = "productsBindingNavigatorSaveItem";
+            this.productsBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
+            this.productsBindingNavigatorSaveItem.Text = "Сохранить данные";
+            this.productsBindingNavigatorSaveItem.Click += new System.EventHandler(this.productsBindingNavigatorSaveItem_Click);
             // 
-            // service_idLabel1
+            // product_idLabel1
             // 
-            this.service_idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicesBindingSource, "service_id", true));
-            this.service_idLabel1.Location = new System.Drawing.Point(337, 49);
-            this.service_idLabel1.Name = "service_idLabel1";
-            this.service_idLabel1.Size = new System.Drawing.Size(100, 23);
-            this.service_idLabel1.TabIndex = 30;
-            this.service_idLabel1.Text = "label1";
+            this.product_idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "product_id", true));
+            this.product_idLabel1.Location = new System.Drawing.Point(310, 50);
+            this.product_idLabel1.Name = "product_idLabel1";
+            this.product_idLabel1.Size = new System.Drawing.Size(100, 23);
+            this.product_idLabel1.TabIndex = 30;
+            this.product_idLabel1.Text = "label1";
             // 
             // nameTextBox
             // 
-            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicesBindingSource, "name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(340, 75);
+            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "name", true));
+            this.nameTextBox.Location = new System.Drawing.Point(313, 76);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(165, 22);
+            this.nameTextBox.Size = new System.Drawing.Size(207, 22);
             this.nameTextBox.TabIndex = 31;
             // 
-            // descriptionTextBox
+            // brandTextBox
             // 
-            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicesBindingSource, "description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(339, 108);
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(166, 22);
-            this.descriptionTextBox.TabIndex = 32;
+            this.brandTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "brand", true));
+            this.brandTextBox.Location = new System.Drawing.Point(313, 126);
+            this.brandTextBox.Name = "brandTextBox";
+            this.brandTextBox.Size = new System.Drawing.Size(207, 22);
+            this.brandTextBox.TabIndex = 33;
+            // 
+            // priceTextBox
+            // 
+            this.priceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "price", true));
+            this.priceTextBox.Location = new System.Drawing.Point(313, 154);
+            this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.Size = new System.Drawing.Size(146, 22);
+            this.priceTextBox.TabIndex = 34;
+            // 
+            // imeiTextBox
+            // 
+            this.imeiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "imei", true));
+            this.imeiTextBox.Location = new System.Drawing.Point(313, 209);
+            this.imeiTextBox.Name = "imeiTextBox";
+            this.imeiTextBox.Size = new System.Drawing.Size(207, 22);
+            this.imeiTextBox.TabIndex = 36;
             // 
             // is_activeCheckBox
             // 
-            this.is_activeCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.servicesBindingSource, "is_active", true));
-            this.is_activeCheckBox.Location = new System.Drawing.Point(392, 246);
+            this.is_activeCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productsBindingSource, "is_active", true));
+            this.is_activeCheckBox.Location = new System.Drawing.Point(313, 241);
             this.is_activeCheckBox.Name = "is_activeCheckBox";
-            this.is_activeCheckBox.Size = new System.Drawing.Size(22, 24);
-            this.is_activeCheckBox.TabIndex = 35;
+            this.is_activeCheckBox.Size = new System.Drawing.Size(26, 24);
+            this.is_activeCheckBox.TabIndex = 37;
             this.is_activeCheckBox.UseVisualStyleBackColor = true;
             // 
-            // monthly_feeTextBox
+            // id_categoryTextBox
             // 
-            this.monthly_feeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicesBindingSource, "monthly_fee", true));
-            this.monthly_feeTextBox.Location = new System.Drawing.Point(357, 157);
-            this.monthly_feeTextBox.Name = "monthly_feeTextBox";
-            this.monthly_feeTextBox.Size = new System.Drawing.Size(100, 22);
-            this.monthly_feeTextBox.TabIndex = 37;
+            this.id_categoryTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "id_category", true));
+            this.id_categoryTextBox.Location = new System.Drawing.Point(314, 102);
+            this.id_categoryTextBox.Name = "id_categoryTextBox";
+            this.id_categoryTextBox.Size = new System.Drawing.Size(100, 22);
+            this.id_categoryTextBox.TabIndex = 38;
             // 
-            // connection_feeTextBox
+            // quantityNumericUpDown
             // 
-            this.connection_feeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicesBindingSource, "connection_fee", true));
-            this.connection_feeTextBox.Location = new System.Drawing.Point(357, 205);
-            this.connection_feeTextBox.Name = "connection_feeTextBox";
-            this.connection_feeTextBox.Size = new System.Drawing.Size(100, 22);
-            this.connection_feeTextBox.TabIndex = 38;
+            this.quantityNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.productsBindingSource, "quantity", true));
+            this.quantityNumericUpDown.Location = new System.Drawing.Point(314, 182);
+            this.quantityNumericUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.quantityNumericUpDown.Name = "quantityNumericUpDown";
+            this.quantityNumericUpDown.Size = new System.Drawing.Size(70, 22);
+            this.quantityNumericUpDown.TabIndex = 39;
             // 
-            // editServices
+            // id_categoryComboBox
+            // 
+            this.id_categoryComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "id_category", true));
+            this.id_categoryComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoryBindingSource, "id", true));
+            this.id_categoryComboBox.DataSource = this.categoryBindingSource;
+            this.id_categoryComboBox.DisplayMember = "name";
+            this.id_categoryComboBox.FormattingEnabled = true;
+            this.id_categoryComboBox.Location = new System.Drawing.Point(465, 100);
+            this.id_categoryComboBox.Name = "id_categoryComboBox";
+            this.id_categoryComboBox.Size = new System.Drawing.Size(121, 24);
+            this.id_categoryComboBox.TabIndex = 40;
+            this.id_categoryComboBox.ValueMember = "id";
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataMember = "category";
+            this.categoryBindingSource.DataSource = this.shopDataSet;
+            // 
+            // categoryTableAdapter
+            // 
+            this.categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // id_categoryLabel1
+            // 
+            id_categoryLabel1.AutoSize = true;
+            id_categoryLabel1.Location = new System.Drawing.Point(663, 105);
+            id_categoryLabel1.Name = "id_categoryLabel1";
+            id_categoryLabel1.Size = new System.Drawing.Size(77, 16);
+            id_categoryLabel1.TabIndex = 40;
+            id_categoryLabel1.Text = "id category:";
+            // 
+            // id_categoryListBox
+            // 
+            this.id_categoryListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoryBindingSource, "id", true));
+            this.id_categoryListBox.DataSource = this.categoryBindingSource;
+            this.id_categoryListBox.DisplayMember = "name";
+            this.id_categoryListBox.FormattingEnabled = true;
+            this.id_categoryListBox.ItemHeight = 16;
+            this.id_categoryListBox.Location = new System.Drawing.Point(746, 105);
+            this.id_categoryListBox.Name = "id_categoryListBox";
+            this.id_categoryListBox.Size = new System.Drawing.Size(120, 20);
+            this.id_categoryListBox.TabIndex = 41;
+            this.id_categoryListBox.ValueMember = "id";
+            // 
+            // categoryBindingSource1
+            // 
+            this.categoryBindingSource1.DataMember = "category";
+            this.categoryBindingSource1.DataSource = this.shopDataSet;
+            // 
+            // editProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 458);
-            this.Controls.Add(this.connection_feeTextBox);
-            this.Controls.Add(this.monthly_feeTextBox);
-            this.Controls.Add(connection_feeLabel);
+            this.ClientSize = new System.Drawing.Size(886, 458);
+            this.Controls.Add(id_categoryLabel1);
+            this.Controls.Add(this.id_categoryListBox);
+            this.Controls.Add(this.id_categoryComboBox);
+            this.Controls.Add(this.quantityNumericUpDown);
+            this.Controls.Add(this.id_categoryTextBox);
             this.Controls.Add(is_activeLabel);
             this.Controls.Add(this.is_activeCheckBox);
-            this.Controls.Add(monthly_feeLabel);
-            this.Controls.Add(descriptionLabel);
-            this.Controls.Add(this.descriptionTextBox);
+            this.Controls.Add(imeiLabel);
+            this.Controls.Add(this.imeiTextBox);
+            this.Controls.Add(quantityLabel);
+            this.Controls.Add(priceLabel);
+            this.Controls.Add(this.priceTextBox);
+            this.Controls.Add(brandLabel);
+            this.Controls.Add(this.brandTextBox);
+            this.Controls.Add(id_categoryLabel);
             this.Controls.Add(nameLabel);
             this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(service_idLabel);
-            this.Controls.Add(this.service_idLabel1);
-            this.Controls.Add(this.servicesBindingNavigator);
+            this.Controls.Add(product_idLabel);
+            this.Controls.Add(this.product_idLabel1);
+            this.Controls.Add(this.productsBindingNavigator);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnLast);
@@ -445,14 +555,17 @@
             this.Controls.Add(this.btnPrevios);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "editServices";
+            this.Name = "editProducts";
             this.Text = "Редактирование данных";
-            this.Load += new System.EventHandler(this.editServices_Load);
+            this.Load += new System.EventHandler(this.editProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingNavigator)).EndInit();
-            this.servicesBindingNavigator.ResumeLayout(false);
-            this.servicesBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingNavigator)).EndInit();
+            this.productsBindingNavigator.ResumeLayout(false);
+            this.productsBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,9 +583,9 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnBack;
         private shopDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingSource servicesBindingSource;
-        private shopDataSetTableAdapters.servicesTableAdapter servicesTableAdapter;
-        private System.Windows.Forms.BindingNavigator servicesBindingNavigator;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private shopDataSetTableAdapters.productsTableAdapter productsTableAdapter;
+        private System.Windows.Forms.BindingNavigator productsBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -484,12 +597,19 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton servicesBindingNavigatorSaveItem;
-        private System.Windows.Forms.Label service_idLabel1;
+        private System.Windows.Forms.ToolStripButton productsBindingNavigatorSaveItem;
+        private System.Windows.Forms.Label product_idLabel1;
         private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.TextBox descriptionTextBox;
+        private System.Windows.Forms.TextBox brandTextBox;
+        private System.Windows.Forms.TextBox priceTextBox;
+        private System.Windows.Forms.TextBox imeiTextBox;
         private System.Windows.Forms.CheckBox is_activeCheckBox;
-        private System.Windows.Forms.TextBox monthly_feeTextBox;
-        private System.Windows.Forms.TextBox connection_feeTextBox;
+        private System.Windows.Forms.TextBox id_categoryTextBox;
+        private System.Windows.Forms.NumericUpDown quantityNumericUpDown;
+        private System.Windows.Forms.ComboBox id_categoryComboBox;
+        private System.Windows.Forms.BindingSource categoryBindingSource;
+        private shopDataSetTableAdapters.categoryTableAdapter categoryTableAdapter;
+        private System.Windows.Forms.ListBox id_categoryListBox;
+        private System.Windows.Forms.BindingSource categoryBindingSource1;
     }
 }

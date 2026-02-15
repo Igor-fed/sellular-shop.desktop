@@ -191,7 +191,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -449,6 +448,8 @@
             this.Controls.Add(this.employeeComboBox);
             this.Controls.Add(this.employeeSelectLabel);
             this.Controls.Add(this.employeesBindingNavigator);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "btnChangePass";
             this.Text = "Редактирование пароля";
             this.Load += new System.EventHandler(this.AdminForm_Load);
