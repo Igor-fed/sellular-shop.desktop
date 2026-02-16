@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.vwdailysalesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.shopDataSet = new sellular_shop.shopDataSet();
             this.btnBack = new System.Windows.Forms.Button();
             this.filter = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.vwdailysalesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vw_daily_salesTableAdapter = new sellular_shop.shopDataSetTableAdapters.vw_daily_salesTableAdapter();
             this.saledayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salescountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwdailysalesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -62,6 +62,11 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(429, 384);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // vwdailysalesBindingSource
+            // 
+            this.vwdailysalesBindingSource.DataMember = "vw_daily_sales";
+            this.vwdailysalesBindingSource.DataSource = this.shopDataSet;
             // 
             // shopDataSet
             // 
@@ -98,11 +103,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // vwdailysalesBindingSource
-            // 
-            this.vwdailysalesBindingSource.DataMember = "vw_daily_sales";
-            this.vwdailysalesBindingSource.DataSource = this.shopDataSet;
-            // 
             // vw_daily_salesTableAdapter
             // 
             this.vw_daily_salesTableAdapter.ClearBeforeFill = true;
@@ -110,7 +110,7 @@
             // saledayDataGridViewTextBoxColumn
             // 
             this.saledayDataGridViewTextBoxColumn.DataPropertyName = "sale_day";
-            this.saledayDataGridViewTextBoxColumn.HeaderText = "sale_day";
+            this.saledayDataGridViewTextBoxColumn.HeaderText = "День";
             this.saledayDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.saledayDataGridViewTextBoxColumn.Name = "saledayDataGridViewTextBoxColumn";
             this.saledayDataGridViewTextBoxColumn.ReadOnly = true;
@@ -119,7 +119,7 @@
             // salescountDataGridViewTextBoxColumn
             // 
             this.salescountDataGridViewTextBoxColumn.DataPropertyName = "sales_count";
-            this.salescountDataGridViewTextBoxColumn.HeaderText = "sales_count";
+            this.salescountDataGridViewTextBoxColumn.HeaderText = "количество продаж";
             this.salescountDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.salescountDataGridViewTextBoxColumn.Name = "salescountDataGridViewTextBoxColumn";
             this.salescountDataGridViewTextBoxColumn.ReadOnly = true;
@@ -128,7 +128,7 @@
             // totalamountDataGridViewTextBoxColumn
             // 
             this.totalamountDataGridViewTextBoxColumn.DataPropertyName = "total_amount";
-            this.totalamountDataGridViewTextBoxColumn.HeaderText = "total_amount";
+            this.totalamountDataGridViewTextBoxColumn.HeaderText = "сумма";
             this.totalamountDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.totalamountDataGridViewTextBoxColumn.Name = "totalamountDataGridViewTextBoxColumn";
             this.totalamountDataGridViewTextBoxColumn.ReadOnly = true;
@@ -149,8 +149,8 @@
             this.Text = "Ежедневные продажи";
             this.Load += new System.EventHandler(this.vw_daily_sales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwdailysalesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReceiptPdfExporter.cs" />
+    <Compile Include="sale_items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sale_items.Designer.cs">
+      <DependentUpon>sale_items.cs</DependentUpon>
+    </Compile>
     <Compile Include="vw_product_revenue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +229,9 @@
     <Compile Include="UI\FilterDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="sale_items.resx">
+      <DependentUpon>sale_items.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vw_product_revenue.resx">
       <DependentUpon>vw_product_revenue.cs</DependentUpon>
     </EmbeddedResource>

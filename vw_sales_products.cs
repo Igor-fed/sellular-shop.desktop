@@ -27,8 +27,15 @@ namespace sellular_shop
         private void vw_sales_products_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.vw_sales_products". При необходимости она может быть перемещена или удалена.
-            vw_sales_productsTableAdapter.Fill(shopDataSet.vw_sales_products);
-     
+            try
+            {
+                shopDataSet.EnforceConstraints = false;
+                vw_sales_productsTableAdapter.Fill(shopDataSet.vw_sales_products);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки продаж товаров: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }
@@ -67,7 +74,7 @@ namespace sellular_shop
 
         private void filter_Click(object sender, EventArgs e)
         {
-            DataTable sourceTable = shopDataSet.services;
+            DataTable sourceTable = shopDataSet.vw_sales_products;
             if (sourceTable == null)
             {
                 return;
@@ -111,7 +118,7 @@ namespace sellular_shop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            vwsalesproductsBindingSource.DataSource = shopDataSet.services;
+            vwsalesproductsBindingSource.DataSource = shopDataSet.vw_sales_products;
             vwsalesproductsBindingSource.RemoveFilter();
             vwsalesproductsBindingSource.Sort = string.Empty;
 

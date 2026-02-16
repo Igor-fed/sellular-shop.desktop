@@ -39,7 +39,7 @@
             this.delete = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.categoryNametTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -136,15 +136,14 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 24);
             this.comboBox1.TabIndex = 16;
-            this.comboBox1.Text = "id Категории";
             // 
-            // textBox1
+            // categoryNametTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(30, 198);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 22);
-            this.textBox1.TabIndex = 17;
-            this.textBox1.Tag = "Название категории";
+            this.categoryNametTextBox.Location = new System.Drawing.Point(30, 198);
+            this.categoryNametTextBox.Name = "categoryNametTextBox";
+            this.categoryNametTextBox.Size = new System.Drawing.Size(200, 22);
+            this.categoryNametTextBox.TabIndex = 17;
+            this.categoryNametTextBox.Tag = "Название категории";
             // 
             // label1
             // 
@@ -171,7 +170,7 @@
             this.ClientSize = new System.Drawing.Size(800, 408);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.categoryNametTextBox);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.add);
             this.Controls.Add(this.delete);
@@ -202,7 +201,7 @@
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox categoryNametTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

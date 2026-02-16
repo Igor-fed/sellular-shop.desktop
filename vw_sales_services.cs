@@ -12,6 +12,7 @@ using sellular_shop.shopDataSetTableAdapters;
 using sellular_shop.Sorting;
 using sellular_shop.UI;
 
+
 namespace sellular_shop
 {
     public partial class vw_sales_services : Form
@@ -27,8 +28,16 @@ namespace sellular_shop
         private void vw_sales_services_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.vw_sales_services". При необходимости она может быть перемещена или удалена.
-            vw_sales_servicesTableAdapter.Fill(shopDataSet.vw_sales_services);
-   
+            try
+            {
+                shopDataSet.EnforceConstraints = false;
+                vw_sales_servicesTableAdapter.Fill(shopDataSet.vw_sales_services);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки продаж услуг: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
 
 
@@ -68,7 +77,7 @@ namespace sellular_shop
 
         private void filter_Click(object sender, EventArgs e)
         {
-            DataTable sourceTable = shopDataSet.services;
+            DataTable sourceTable = shopDataSet.vw_sales_services;
             if (sourceTable == null)
             {
                 return;
@@ -112,7 +121,7 @@ namespace sellular_shop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            vwsalesservicesBindingSource.DataSource = shopDataSet.services;
+            vwsalesservicesBindingSource.DataSource = shopDataSet.vw_sales_services;
             vwsalesservicesBindingSource.RemoveFilter();
             vwsalesservicesBindingSource.Sort = string.Empty;
 

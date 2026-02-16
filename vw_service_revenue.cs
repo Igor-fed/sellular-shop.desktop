@@ -68,7 +68,7 @@ namespace sellular_shop
 
         private void filter_Click(object sender, EventArgs e)
         {
-            DataTable sourceTable = shopDataSet.services;
+            DataTable sourceTable = shopDataSet.vw_service_revenue;
             if (sourceTable == null)
             {
                 return;
@@ -112,7 +112,7 @@ namespace sellular_shop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            vwservicerevenueBindingSource.DataSource = shopDataSet.services;
+            vwservicerevenueBindingSource.DataSource = shopDataSet.vw_service_revenue;
             vwservicerevenueBindingSource.RemoveFilter();
             vwservicerevenueBindingSource.Sort = string.Empty;
 

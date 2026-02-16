@@ -65,7 +65,7 @@ namespace sellular_shop
 
         private void filter_Click(object sender, EventArgs e)
         {
-            DataTable sourceTable = shopDataSet.services;
+            DataTable sourceTable = shopDataSet.products;
             if (sourceTable == null)
             {
                 return;
@@ -109,7 +109,7 @@ namespace sellular_shop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            productsBindingSource.DataSource = shopDataSet.services;
+            productsBindingSource.DataSource = shopDataSet.products;
             productsBindingSource.RemoveFilter();
             productsBindingSource.Sort = string.Empty;
 

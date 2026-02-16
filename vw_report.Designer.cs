@@ -30,12 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vwreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.shopDataSet = new sellular_shop.shopDataSet();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.filter = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.vw_reportTableAdapter = new sellular_shop.shopDataSetTableAdapters.vw_reportTableAdapter();
             this.saleidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saledateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +39,13 @@
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemtotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vwreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.shopDataSet = new sellular_shop.shopDataSet();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.filter = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.vw_reportTableAdapter = new sellular_shop.shopDataSetTableAdapters.vw_reportTableAdapter();
+            this.btnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwreportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).BeginInit();
@@ -72,52 +73,8 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(429, 384);
+            this.dataGridView1.Size = new System.Drawing.Size(515, 469);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // vwreportBindingSource
-            // 
-            this.vwreportBindingSource.DataMember = "vw_report";
-            this.vwreportBindingSource.DataSource = this.shopDataSet;
-            // 
-            // shopDataSet
-            // 
-            this.shopDataSet.DataSetName = "shopDataSet";
-            this.shopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(41, 33);
-            this.btnBack.TabIndex = 13;
-            this.btnBack.Text = "←";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // filter
-            // 
-            this.filter.Location = new System.Drawing.Point(12, 290);
-            this.filter.Name = "filter";
-            this.filter.Size = new System.Drawing.Size(220, 50);
-            this.filter.TabIndex = 15;
-            this.filter.Text = "Фильтр";
-            this.filter.UseVisualStyleBackColor = true;
-            this.filter.Click += new System.EventHandler(this.filter_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 346);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(220, 50);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Показать все";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // vw_reportTableAdapter
-            // 
-            this.vw_reportTableAdapter.ClearBeforeFill = true;
             // 
             // saleidDataGridViewTextBoxColumn
             // 
@@ -200,11 +157,66 @@
             this.itemtotalDataGridViewTextBoxColumn.ReadOnly = true;
             this.itemtotalDataGridViewTextBoxColumn.Width = 125;
             // 
+            // vwreportBindingSource
+            // 
+            this.vwreportBindingSource.DataMember = "vw_report";
+            this.vwreportBindingSource.DataSource = this.shopDataSet;
+            // 
+            // shopDataSet
+            // 
+            this.shopDataSet.DataSetName = "shopDataSet";
+            this.shopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(41, 33);
+            this.btnBack.TabIndex = 13;
+            this.btnBack.Text = "←";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // filter
+            // 
+            this.filter.Location = new System.Drawing.Point(12, 375);
+            this.filter.Name = "filter";
+            this.filter.Size = new System.Drawing.Size(220, 50);
+            this.filter.TabIndex = 15;
+            this.filter.Text = "Фильтр";
+            this.filter.UseVisualStyleBackColor = true;
+            this.filter.Click += new System.EventHandler(this.filter_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 431);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(220, 50);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Показать все";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // vw_reportTableAdapter
+            // 
+            this.vw_reportTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(12, 319);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(220, 50);
+            this.btnExport.TabIndex = 17;
+            this.btnExport.Text = "Сформировать";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // vw_report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 408);
+            this.ClientSize = new System.Drawing.Size(803, 493);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.filter);
             this.Controls.Add(this.btnBack);
@@ -239,5 +251,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemtotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnExport;
     }
 }

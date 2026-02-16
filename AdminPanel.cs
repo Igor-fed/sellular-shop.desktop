@@ -58,9 +58,9 @@ namespace sellular_shop
             vw_daily_sales.Visible = isVisible;
             vw_product_revenue.Visible = isVisible;
             vw_sales_by_employee.Visible = isVisible;
-            vw_sales_products.Visible = isVisible;
-            vw_sales_services.Visible = isVisible;
+         
             vw_service_revenue.Visible = isVisible;
+            sale_items.Visible = isVisible;
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
@@ -141,6 +141,11 @@ namespace sellular_shop
         private void vwreport_Click(object sender, EventArgs e)
         {
             OpenForm<vw_report>();  
+        }
+
+        private void sale_items_Click(object sender, EventArgs e)
+        {
+            OpenForm<sale_items>();
         }
     }
 

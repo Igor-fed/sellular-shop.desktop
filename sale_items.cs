@@ -14,21 +14,20 @@ using sellular_shop.UI;
 
 namespace sellular_shop
 {
-    public partial class vw_average_receipt_monthly: Form
+    public partial class sale_items : Form
     {
         private readonly GridSortState _sortState = new GridSortState();
 
-        public vw_average_receipt_monthly()
+        public sale_items()
         {
             InitializeComponent();
             dataGridView1.ColumnHeaderMouseClick += dataGridView1_ColumnHeaderMouseClick;
         }
 
-        private void vw_average_receipt_monthly_Load(object sender, EventArgs e)
+        private void sale_items_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.vw_average_receipt_monthly". При необходимости она может быть перемещена или удалена.
-            vw_average_receipt_monthlyTableAdapter.Fill(shopDataSet.vw_average_receipt_monthly);
-
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.sale_items". При необходимости она может быть перемещена или удалена.
+            sale_itemsTableAdapter.Fill(shopDataSet.sale_items);
 
         }
 
@@ -49,7 +48,7 @@ namespace sellular_shop
 
             ListSortDirection nextSortDirection = _sortState.GetNextDirection(dataPropertyName);
             string sortDirectionText = GridSortState.ToSortDirectionText(nextSortDirection);
-            vwaveragereceiptmonthlyBindingSource.Sort = $"{dataPropertyName} {sortDirectionText}";
+            saleitemsBindingSource.Sort = $"{dataPropertyName} {sortDirectionText}";
 
             clickedColumn.HeaderCell.SortGlyphDirection = nextSortDirection == ListSortDirection.Ascending
                 ? SortOrder.Ascending
@@ -66,7 +65,7 @@ namespace sellular_shop
 
         private void filter_Click(object sender, EventArgs e)
         {
-            DataTable sourceTable = shopDataSet.vw_average_receipt_monthly;
+            DataTable sourceTable = shopDataSet.sale_items;
             if (sourceTable == null)
             {
                 return;
@@ -94,7 +93,7 @@ namespace sellular_shop
                 try
                 {
                     DataTable filtered = TableFilterService.ApplyFilter(sourceTable, dialog.SelectedColumn, dialog.SearchValue, dialog.UseRegex);
-                    vwaveragereceiptmonthlyBindingSource.DataSource = filtered;
+                    saleitemsBindingSource.DataSource = filtered;
                 }
                 catch (ArgumentException ex)
                 {
@@ -110,9 +109,9 @@ namespace sellular_shop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            vwaveragereceiptmonthlyBindingSource.DataSource = shopDataSet.vw_average_receipt_monthly;
-            vwaveragereceiptmonthlyBindingSource.RemoveFilter();
-            vwaveragereceiptmonthlyBindingSource.Sort = string.Empty;
+            saleitemsBindingSource.DataSource = shopDataSet.sale_items;
+            saleitemsBindingSource.RemoveFilter();
+            saleitemsBindingSource.Sort = string.Empty;
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
