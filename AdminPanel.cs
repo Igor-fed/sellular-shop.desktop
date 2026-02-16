@@ -52,6 +52,15 @@ namespace sellular_shop
             category.Visible = isVisible;
             products.Visible = isVisible;
             contracts.Visible = isVisible;
+            sales.Visible = isVisible;
+            vwreport.Visible = isVisible;
+            vw_average_receipt_monthly.Visible = isVisible;
+            vw_daily_sales.Visible = isVisible;
+            vw_product_revenue.Visible = isVisible;
+            vw_sales_by_employee.Visible = isVisible;
+            vw_sales_products.Visible = isVisible;
+            vw_sales_services.Visible = isVisible;
+            vw_service_revenue.Visible = isVisible;
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
@@ -87,6 +96,51 @@ namespace sellular_shop
         private void contracts_Click(object sender, EventArgs e)
         {
             OpenForm<contracts>();
+        }
+
+        private void sales_Click(object sender, EventArgs e)
+        {
+            OpenForm<sales>();
+        }
+
+        private void vw_average_receipt_monthly_Click(object sender, EventArgs e)
+        {
+            OpenForm<vw_average_receipt_monthly>();
+        }
+
+        private void vw_daily_sales_Click(object sender, EventArgs e)
+        {
+            OpenForm<vw_daily_sales>();
+        }
+
+        private void vw_product_revenue_Click(object sender, EventArgs e)
+        {
+            OpenForm<vw_product_revenue>();
+        }
+
+        private void vw_service_revenue_Click(object sender, EventArgs e)
+        {
+            OpenForm<vw_service_revenue>();
+        }
+
+        private void vw_sales_by_employee_Click(object sender, EventArgs e)
+        {
+            OpenForm<vw_sales_by_employee>();
+        }
+
+        private void vw_sales_services_Click(object sender, EventArgs e)
+        {
+            OpenForm<vw_sales_services>();
+        }
+
+        private void vw_sales_products_Click(object sender, EventArgs e)
+        {
+            OpenForm<vw_sales_products>();
+        }
+
+        private void vwreport_Click(object sender, EventArgs e)
+        {
+            OpenForm<vw_report>();  
         }
     }
 

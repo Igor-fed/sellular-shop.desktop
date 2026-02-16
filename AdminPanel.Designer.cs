@@ -32,17 +32,17 @@
             this.btnEmployees = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
             this.btnServices = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.sales = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.category = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.vw_average_receipt_monthly = new System.Windows.Forms.Button();
+            this.vw_daily_sales = new System.Windows.Forms.Button();
+            this.vw_product_revenue = new System.Windows.Forms.Button();
+            this.vw_service_revenue = new System.Windows.Forms.Button();
+            this.vw_sales_by_employee = new System.Windows.Forms.Button();
+            this.vw_sales_services = new System.Windows.Forms.Button();
+            this.vw_sales_products = new System.Windows.Forms.Button();
+            this.vwreport = new System.Windows.Forms.Button();
             this.products = new System.Windows.Forms.Button();
             this.contracts = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -55,7 +55,6 @@
             this.changePass.TabIndex = 0;
             this.changePass.Text = "Изменение пароля";
             this.changePass.UseVisualStyleBackColor = true;
-            this.changePass.Visible = false;
             this.changePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
             // btnEmployees
@@ -88,15 +87,15 @@
             this.btnServices.UseVisualStyleBackColor = true;
             this.btnServices.Click += new System.EventHandler(this.btnServices_Click);
             // 
-            // button1
+            // sales
             // 
-            this.button1.Location = new System.Drawing.Point(300, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(186, 60);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Продажи";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
+            this.sales.Location = new System.Drawing.Point(300, 127);
+            this.sales.Name = "sales";
+            this.sales.Size = new System.Drawing.Size(186, 60);
+            this.sales.TabIndex = 4;
+            this.sales.Text = "Продажи";
+            this.sales.UseVisualStyleBackColor = true;
+            this.sales.Click += new System.EventHandler(this.sales_Click);
             // 
             // button2
             // 
@@ -118,85 +117,85 @@
             this.category.UseVisualStyleBackColor = true;
             this.category.Click += new System.EventHandler(this.category_Click);
             // 
-            // button4
+            // vw_average_receipt_monthly
             // 
-            this.button4.Location = new System.Drawing.Point(300, 259);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(186, 60);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Средний ежемесячный чек";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
+            this.vw_average_receipt_monthly.Location = new System.Drawing.Point(300, 259);
+            this.vw_average_receipt_monthly.Name = "vw_average_receipt_monthly";
+            this.vw_average_receipt_monthly.Size = new System.Drawing.Size(186, 60);
+            this.vw_average_receipt_monthly.TabIndex = 7;
+            this.vw_average_receipt_monthly.Text = "Средний ежемесячный чек";
+            this.vw_average_receipt_monthly.UseVisualStyleBackColor = true;
+            this.vw_average_receipt_monthly.Click += new System.EventHandler(this.vw_average_receipt_monthly_Click);
             // 
-            // button5
+            // vw_daily_sales
             // 
-            this.button5.Location = new System.Drawing.Point(300, 325);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(186, 60);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Ежедневные продажи";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Visible = false;
+            this.vw_daily_sales.Location = new System.Drawing.Point(300, 325);
+            this.vw_daily_sales.Name = "vw_daily_sales";
+            this.vw_daily_sales.Size = new System.Drawing.Size(186, 60);
+            this.vw_daily_sales.TabIndex = 8;
+            this.vw_daily_sales.Text = "Ежедневные продажи";
+            this.vw_daily_sales.UseVisualStyleBackColor = true;
+            this.vw_daily_sales.Click += new System.EventHandler(this.vw_daily_sales_Click);
             // 
-            // button6
+            // vw_product_revenue
             // 
-            this.button6.Location = new System.Drawing.Point(539, 61);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(186, 60);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Выручка с реализации товаров";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Visible = false;
+            this.vw_product_revenue.Location = new System.Drawing.Point(539, 61);
+            this.vw_product_revenue.Name = "vw_product_revenue";
+            this.vw_product_revenue.Size = new System.Drawing.Size(186, 60);
+            this.vw_product_revenue.TabIndex = 9;
+            this.vw_product_revenue.Text = "Выручка с реализации товаров";
+            this.vw_product_revenue.UseVisualStyleBackColor = true;
+            this.vw_product_revenue.Click += new System.EventHandler(this.vw_product_revenue_Click);
             // 
-            // button7
+            // vw_service_revenue
             // 
-            this.button7.Location = new System.Drawing.Point(539, 127);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(186, 60);
-            this.button7.TabIndex = 10;
-            this.button7.Text = "Выручка с реализации услуг";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Visible = false;
+            this.vw_service_revenue.Location = new System.Drawing.Point(539, 127);
+            this.vw_service_revenue.Name = "vw_service_revenue";
+            this.vw_service_revenue.Size = new System.Drawing.Size(186, 60);
+            this.vw_service_revenue.TabIndex = 10;
+            this.vw_service_revenue.Text = "Выручка с реализации услуг";
+            this.vw_service_revenue.UseVisualStyleBackColor = true;
+            this.vw_service_revenue.Click += new System.EventHandler(this.vw_service_revenue_Click);
             // 
-            // button8
+            // vw_sales_by_employee
             // 
-            this.button8.Location = new System.Drawing.Point(539, 193);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(186, 60);
-            this.button8.TabIndex = 11;
-            this.button8.Text = "KPI сотрудников";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Visible = false;
+            this.vw_sales_by_employee.Location = new System.Drawing.Point(539, 193);
+            this.vw_sales_by_employee.Name = "vw_sales_by_employee";
+            this.vw_sales_by_employee.Size = new System.Drawing.Size(186, 60);
+            this.vw_sales_by_employee.TabIndex = 11;
+            this.vw_sales_by_employee.Text = "KPI сотрудников";
+            this.vw_sales_by_employee.UseVisualStyleBackColor = true;
+            this.vw_sales_by_employee.Click += new System.EventHandler(this.vw_sales_by_employee_Click);
             // 
-            // button9
+            // vw_sales_services
             // 
-            this.button9.Location = new System.Drawing.Point(539, 259);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(186, 60);
-            this.button9.TabIndex = 12;
-            this.button9.Text = "Продажи услуг";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Visible = false;
+            this.vw_sales_services.Location = new System.Drawing.Point(539, 259);
+            this.vw_sales_services.Name = "vw_sales_services";
+            this.vw_sales_services.Size = new System.Drawing.Size(186, 60);
+            this.vw_sales_services.TabIndex = 12;
+            this.vw_sales_services.Text = "Продажи услуг";
+            this.vw_sales_services.UseVisualStyleBackColor = true;
+            this.vw_sales_services.Click += new System.EventHandler(this.vw_sales_services_Click);
             // 
-            // button10
+            // vw_sales_products
             // 
-            this.button10.Location = new System.Drawing.Point(539, 325);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(186, 60);
-            this.button10.TabIndex = 13;
-            this.button10.Text = "Продажи товаров";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Visible = false;
+            this.vw_sales_products.Location = new System.Drawing.Point(539, 325);
+            this.vw_sales_products.Name = "vw_sales_products";
+            this.vw_sales_products.Size = new System.Drawing.Size(186, 60);
+            this.vw_sales_products.TabIndex = 13;
+            this.vw_sales_products.Text = "Продажи товаров";
+            this.vw_sales_products.UseVisualStyleBackColor = true;
+            this.vw_sales_products.Click += new System.EventHandler(this.vw_sales_products_Click);
             // 
-            // button11
+            // vwreport
             // 
-            this.button11.Location = new System.Drawing.Point(175, 391);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(186, 60);
-            this.button11.TabIndex = 14;
-            this.button11.Text = "Отчет";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Visible = false;
+            this.vwreport.Location = new System.Drawing.Point(175, 391);
+            this.vwreport.Name = "vwreport";
+            this.vwreport.Size = new System.Drawing.Size(186, 60);
+            this.vwreport.TabIndex = 14;
+            this.vwreport.Text = "Отчет";
+            this.vwreport.UseVisualStyleBackColor = true;
+            this.vwreport.Click += new System.EventHandler(this.vwreport_Click);
             // 
             // products
             // 
@@ -226,17 +225,17 @@
             this.ClientSize = new System.Drawing.Size(800, 503);
             this.Controls.Add(this.contracts);
             this.Controls.Add(this.products);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.vwreport);
+            this.Controls.Add(this.vw_sales_products);
+            this.Controls.Add(this.vw_sales_services);
+            this.Controls.Add(this.vw_sales_by_employee);
+            this.Controls.Add(this.vw_service_revenue);
+            this.Controls.Add(this.vw_product_revenue);
+            this.Controls.Add(this.vw_daily_sales);
+            this.Controls.Add(this.vw_average_receipt_monthly);
             this.Controls.Add(this.category);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.sales);
             this.Controls.Add(this.btnServices);
             this.Controls.Add(this.btnClients);
             this.Controls.Add(this.btnEmployees);
@@ -255,17 +254,17 @@
         private System.Windows.Forms.Button btnEmployees;
         private System.Windows.Forms.Button btnClients;
         private System.Windows.Forms.Button btnServices;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button sales;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button category;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button vw_average_receipt_monthly;
+        private System.Windows.Forms.Button vw_daily_sales;
+        private System.Windows.Forms.Button vw_product_revenue;
+        private System.Windows.Forms.Button vw_service_revenue;
+        private System.Windows.Forms.Button vw_sales_by_employee;
+        private System.Windows.Forms.Button vw_sales_services;
+        private System.Windows.Forms.Button vw_sales_products;
+        private System.Windows.Forms.Button vwreport;
         private System.Windows.Forms.Button products;
         private System.Windows.Forms.Button contracts;
     }

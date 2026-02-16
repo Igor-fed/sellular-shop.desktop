@@ -14,21 +14,20 @@ using sellular_shop.UI;
 
 namespace sellular_shop
 {
-    public partial class sales : Form
+    public partial class active_services : Form
     {
         private readonly GridSortState _sortState = new GridSortState();
 
-        public sales()
+        public active_services()
         {
             InitializeComponent();
             dataGridView1.ColumnHeaderMouseClick += dataGridView1_ColumnHeaderMouseClick;
         }
 
-        private void sales_Load(object sender, EventArgs e)
+        private void active_services_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.sales". При необходимости она может быть перемещена или удалена.
-            salesTableAdapter.Fill(shopDataSet.sales);
-   
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shopDataSet.vw_active_services". При необходимости она может быть перемещена или удалена.
+            vw_active_servicesTableAdapter.Fill(shopDataSet.vw_active_services);
 
         }
 
@@ -49,7 +48,7 @@ namespace sellular_shop
 
             ListSortDirection nextSortDirection = _sortState.GetNextDirection(dataPropertyName);
             string sortDirectionText = GridSortState.ToSortDirectionText(nextSortDirection);
-            salesBindingSource.Sort = $"{dataPropertyName} {sortDirectionText}";
+            vwactiveservicesBindingSource.Sort = $"{dataPropertyName} {sortDirectionText}";
 
             clickedColumn.HeaderCell.SortGlyphDirection = nextSortDirection == ListSortDirection.Ascending
                 ? SortOrder.Ascending
@@ -94,7 +93,7 @@ namespace sellular_shop
                 try
                 {
                     DataTable filtered = TableFilterService.ApplyFilter(sourceTable, dialog.SelectedColumn, dialog.SearchValue, dialog.UseRegex);
-                    salesBindingSource.DataSource = filtered;
+                    vwactiveservicesBindingSource.DataSource = filtered;
                 }
                 catch (ArgumentException ex)
                 {
@@ -110,9 +109,9 @@ namespace sellular_shop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            salesBindingSource.DataSource = shopDataSet.services;
-            salesBindingSource.RemoveFilter();
-            salesBindingSource.Sort = string.Empty;
+            vwactiveservicesBindingSource.DataSource = shopDataSet.services;
+            vwactiveservicesBindingSource.RemoveFilter();
+            vwactiveservicesBindingSource.Sort = string.Empty;
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
@@ -122,10 +121,5 @@ namespace sellular_shop
             _sortState.Reset();
         }
 
-        private void edit_Click(object sender, EventArgs e)
-        {
-            editSales  edit = new editSales();
-            edit.ShowDialog();
-        }
     }
 }

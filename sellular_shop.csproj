@@ -46,6 +46,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="vw_product_revenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vw_product_revenue.Designer.cs">
+      <DependentUpon>vw_product_revenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vw_products_in_stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vw_products_in_stock.Designer.cs">
+      <DependentUpon>vw_products_in_stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vw_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vw_report.Designer.cs">
+      <DependentUpon>vw_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vw_sales_products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vw_sales_products.Designer.cs">
+      <DependentUpon>vw_sales_products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vw_sales_by_employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vw_sales_by_employee.Designer.cs">
+      <DependentUpon>vw_sales_by_employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vw_sales_services.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vw_sales_services.Designer.cs">
+      <DependentUpon>vw_sales_services.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vw_service_revenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vw_service_revenue.Designer.cs">
+      <DependentUpon>vw_service_revenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vw_daily_sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vw_daily_sales.Designer.cs">
+      <DependentUpon>vw_daily_sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vw_average_receipt_monthly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vw_average_receipt_monthly.Designer.cs">
+      <DependentUpon>vw_average_receipt_monthly.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +117,18 @@
     </Compile>
     <Compile Include="category.Designer.cs">
       <DependentUpon>category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sales.Designer.cs">
+      <DependentUpon>sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editSales.Designer.cs">
+      <DependentUpon>editSales.cs</DependentUpon>
     </Compile>
     <Compile Include="editProducts.cs">
       <SubType>Form</SubType>
@@ -87,6 +153,12 @@
     </Compile>
     <Compile Include="contracts.Designer.cs">
       <DependentUpon>contracts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="active_services.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="active_services.Designer.cs">
+      <DependentUpon>active_services.cs</DependentUpon>
     </Compile>
     <Compile Include="services.cs">
       <SubType>Form</SubType>
@@ -150,6 +222,33 @@
     <Compile Include="UI\FilterDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="vw_product_revenue.resx">
+      <DependentUpon>vw_product_revenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vw_products_in_stock.resx">
+      <DependentUpon>vw_products_in_stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vw_report.resx">
+      <DependentUpon>vw_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vw_sales_products.resx">
+      <DependentUpon>vw_sales_products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vw_sales_by_employee.resx">
+      <DependentUpon>vw_sales_by_employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vw_sales_services.resx">
+      <DependentUpon>vw_sales_services.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vw_service_revenue.resx">
+      <DependentUpon>vw_service_revenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vw_daily_sales.resx">
+      <DependentUpon>vw_daily_sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vw_average_receipt_monthly.resx">
+      <DependentUpon>vw_average_receipt_monthly.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="category.resx">
       <DependentUpon>category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sales.resx">
+      <DependentUpon>sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editSales.resx">
+      <DependentUpon>editSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editProducts.resx">
       <DependentUpon>editProducts.cs</DependentUpon>
@@ -170,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="contracts.resx">
       <DependentUpon>contracts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="active_services.resx">
+      <DependentUpon>active_services.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="services.resx">
       <DependentUpon>services.cs</DependentUpon>

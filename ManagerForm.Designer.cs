@@ -28,90 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.client = new System.Windows.Forms.Button();
+            this.services = new System.Windows.Forms.Button();
+            this.products = new System.Windows.Forms.Button();
+            this.contracts = new System.Windows.Forms.Button();
+            this.sales = new System.Windows.Forms.Button();
+            this.sale_item = new System.Windows.Forms.Button();
+            this.report = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // client
             // 
-            this.button1.Location = new System.Drawing.Point(62, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 70);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Клиенты";
-            this.button1.UseVisualStyleBackColor = true;
+            this.client.Location = new System.Drawing.Point(62, 58);
+            this.client.Name = "client";
+            this.client.Size = new System.Drawing.Size(200, 70);
+            this.client.TabIndex = 0;
+            this.client.Text = "Клиенты";
+            this.client.UseVisualStyleBackColor = true;
+            this.client.Click += new System.EventHandler(this.client_Click);
             // 
-            // button2
+            // services
             // 
-            this.button2.Location = new System.Drawing.Point(308, 58);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 70);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Услуги";
-            this.button2.UseVisualStyleBackColor = true;
+            this.services.Location = new System.Drawing.Point(308, 58);
+            this.services.Name = "services";
+            this.services.Size = new System.Drawing.Size(200, 70);
+            this.services.TabIndex = 1;
+            this.services.Text = "Услуги";
+            this.services.UseVisualStyleBackColor = true;
+            this.services.Click += new System.EventHandler(this.services_Click);
             // 
-            // button3
+            // products
             // 
-            this.button3.Location = new System.Drawing.Point(561, 58);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 70);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Товары";
-            this.button3.UseVisualStyleBackColor = true;
+            this.products.Location = new System.Drawing.Point(561, 58);
+            this.products.Name = "products";
+            this.products.Size = new System.Drawing.Size(200, 70);
+            this.products.TabIndex = 2;
+            this.products.Text = "Товары";
+            this.products.UseVisualStyleBackColor = true;
+            this.products.Click += new System.EventHandler(this.products_Click);
             // 
-            // button4
+            // contracts
             // 
-            this.button4.Location = new System.Drawing.Point(62, 164);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 70);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Договора";
-            this.button4.UseVisualStyleBackColor = true;
+            this.contracts.Location = new System.Drawing.Point(62, 164);
+            this.contracts.Name = "contracts";
+            this.contracts.Size = new System.Drawing.Size(200, 70);
+            this.contracts.TabIndex = 3;
+            this.contracts.Text = "Договора";
+            this.contracts.UseVisualStyleBackColor = true;
+            this.contracts.Click += new System.EventHandler(this.contracts_Click);
             // 
-            // button5
+            // sales
             // 
-            this.button5.Location = new System.Drawing.Point(308, 164);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(200, 70);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Продажи";
-            this.button5.UseVisualStyleBackColor = true;
+            this.sales.Location = new System.Drawing.Point(308, 164);
+            this.sales.Name = "sales";
+            this.sales.Size = new System.Drawing.Size(200, 70);
+            this.sales.TabIndex = 4;
+            this.sales.Text = "Продажи";
+            this.sales.UseVisualStyleBackColor = true;
+            this.sales.Click += new System.EventHandler(this.sales_Click);
             // 
-            // button6
+            // sale_item
             // 
-            this.button6.Location = new System.Drawing.Point(561, 164);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(200, 70);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Детали продаж";
-            this.button6.UseVisualStyleBackColor = true;
+            this.sale_item.Location = new System.Drawing.Point(561, 164);
+            this.sale_item.Name = "sale_item";
+            this.sale_item.Size = new System.Drawing.Size(200, 70);
+            this.sale_item.TabIndex = 5;
+            this.sale_item.Text = "Детали продаж";
+            this.sale_item.UseVisualStyleBackColor = true;
+            this.sale_item.Click += new System.EventHandler(this.sale_item_Click);
             // 
-            // button7
+            // report
             // 
-            this.button7.Location = new System.Drawing.Point(308, 281);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(200, 70);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Отчет";
-            this.button7.UseVisualStyleBackColor = true;
+            this.report.Location = new System.Drawing.Point(308, 281);
+            this.report.Name = "report";
+            this.report.Size = new System.Drawing.Size(200, 70);
+            this.report.TabIndex = 6;
+            this.report.Text = "Отчет";
+            this.report.UseVisualStyleBackColor = true;
+            this.report.Click += new System.EventHandler(this.report_Click);
             // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 420);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.report);
+            this.Controls.Add(this.sale_item);
+            this.Controls.Add(this.sales);
+            this.Controls.Add(this.contracts);
+            this.Controls.Add(this.products);
+            this.Controls.Add(this.services);
+            this.Controls.Add(this.client);
             this.Name = "ManagerForm";
             this.Text = "Рабочая область";
             this.ResumeLayout(false);
@@ -120,12 +127,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button client;
+        private System.Windows.Forms.Button services;
+        private System.Windows.Forms.Button products;
+        private System.Windows.Forms.Button contracts;
+        private System.Windows.Forms.Button sales;
+        private System.Windows.Forms.Button sale_item;
+        private System.Windows.Forms.Button report;
     }
 }
